@@ -16,19 +16,21 @@
 package com.colt.settings.fragments;
 
 import android.content.Context;
+import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.os.Bundle;
-import android.os.Handler;
+import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.os.SystemProperties;
 import android.os.Handler;
 import android.os.UserHandle;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
-import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.Toast;
@@ -48,10 +50,13 @@ public class AnimationSettings extends SettingsPreferenceFragment
 
     private static final String KEY_SCREEN_OFF_ANIMATION = "screen_off_animation";
     private static final String KEY_SS_TABS_EFFECT = "tabs_effect";
+    private static final String KEY_TOAST_ANIMATION = "toast_animation";
 
     private ListPreference mScreenOffAnimation;
     private Context mContext;
     ListPreference mListViewTabsEffect;
+
+    private ListPreference mToastAnimation;
 
     @Override
     public int getMetricsCategory() {
@@ -79,6 +84,13 @@ public class AnimationSettings extends SettingsPreferenceFragment
         mListViewTabsEffect.setValue(String.valueOf(tabsEffect));
         mListViewTabsEffect.setSummary(mListViewTabsEffect.getEntry());
         mListViewTabsEffect.setOnPreferenceChangeListener(this);
+
+	mToastAnimation = (ListPreference) findPreference(KEY_TOAST_ANIMATION);
+        mToastAnimation.setSummary(mToastAnimation.getEntry());
+        int CurrentToastAnimation = Settings.System.getInt(getContentResolver(), Settings.System.TOAST_ANIMATION, 1);
+        mToastAnimation.setValueIndex(CurrentToastAnimation); //set to index of default value
+        mToastAnimation.setSummary(mToastAnimation.getEntries()[CurrentToastAnimation]);
+        mToastAnimation.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -101,6 +113,12 @@ public class AnimationSettings extends SettingsPreferenceFragment
             Settings.System.putInt(getContentResolver(),
                      Settings.System.COLT_SETTINGS_TABS_EFFECT, value);
             mListViewTabsEffect.setSummary(mListViewTabsEffect.getEntries()[index]);
+            return true;
+        } else if (preference == mToastAnimation) {
+            int index = mToastAnimation.findIndexOfValue((String) objValue);
+            Settings.System.putString(getContentResolver(), Settings.System.TOAST_ANIMATION, (String) objValue);
+            mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
+            Toast.makeText(mContext, "Toast Test", Toast.LENGTH_SHORT).show();
             return true;
          }
         return false;
