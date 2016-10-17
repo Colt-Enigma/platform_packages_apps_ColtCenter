@@ -31,6 +31,12 @@
              android:title="@string/battery_style_category_title"
              android:fragment="com.colt.settings.fragments.StatusBarBattery" />
 
+     <Preference
+        android:key="carrier_label"
+        android:fragment="com.colt.settings.fragments.CarrierLabel"
+        android:title="@string/carrier_category"
+        android:summary="@string/carrier_label_settings_summary" />
+
      <PreferenceCategory
         android:key="statusbar_traffic"
         android:title="@string/statusbar_traffic">
