@@ -35,6 +35,15 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.core.InstrumentedFragment;
 import com.android.settings.search.actionbar.SearchMenuController;
+import android.net.Uri;
+import android.database.ContentObserver;
+import android.provider.Settings;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.Preference.OnPreferenceChangeListener;
+import android.support.v7.preference.PreferenceScreen;
+import android.os.Handler;
+import android.os.UserHandle;
+
 
 /*
 import com.colt.settings.fragments.StatusBarSettings;
@@ -61,6 +70,7 @@ import com.colt.settings.fragments.PowerMenuSettings;
 import com.colt.settings.fragments.MiscSettings;
 import com.colt.settings.fragments.About;
 
+import com.colt.settings.ca.transforms.*;
 
 public class ColtSettingsLayout extends InstrumentedFragment {
 
@@ -71,6 +81,7 @@ public class ColtSettingsLayout extends InstrumentedFragment {
     SectionsPagerAdapter mSectionsPagerAdapter;
     protected Context mContext;
     private LinearLayout mLayout;
+    private SettingsObserver mSettingsObserver;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mContainer = container;
@@ -78,9 +89,11 @@ public class ColtSettingsLayout extends InstrumentedFragment {
         mLayout = (LinearLayout) view.findViewById(R.id.colt_content);
         mViewPager = (ViewPager) view.findViewById(R.id.viewpager);
         mTabs = (PagerSlidingTabStrip) view.findViewById(R.id.tabs);
+	mSettingsObserver = new SettingsObserver(new Handler());
         mSectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager());
         mViewPager.setAdapter(mSectionsPagerAdapter);
         mTabs.setViewPager(mViewPager);
+	mSettingsObserver.observe();
         mContext = getActivity().getApplicationContext();
         ContentResolver resolver = getActivity().getContentResolver();
         return view;
@@ -183,4 +196,99 @@ public class ColtSettingsLayout extends InstrumentedFragment {
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.COLT;
      }
+
+    private class SettingsObserver extends ContentObserver {
+            SettingsObserver(Handler handler) {
+                super(handler);
+            }
+
+            void observe() {
+                ContentResolver resolver = getActivity().getContentResolver();
+                resolver.registerContentObserver(Settings.System.getUriFor(
+                        Settings.System.COLT_SETTINGS_TABS_EFFECT),
+                        false, this, UserHandle.USER_ALL);
+                update();
+            }
+
+            void unobserve() {
+                ContentResolver resolver = getActivity().getContentResolver();
+                resolver.unregisterContentObserver(this);
+            }
+
+            @Override
+            public void onChange(boolean selfChange) {
+                super.onChange(selfChange);
+                update();
+            }
+
+            @Override
+            public void onChange(boolean selfChange, Uri uri) {
+                update();
+            }
+
+           public void update() {
+	   try {
+               ContentResolver resolver = getActivity().getContentResolver();
+               int effect = Settings.System.getIntForUser(resolver,
+                   Settings.System.COLT_SETTINGS_TABS_EFFECT, 0,
+                   UserHandle.USER_CURRENT);
+               switch (effect) {
+                   case 0:
+                       mViewPager.setPageTransformer(true, new DefaultTransformer());
+                       break;
+                   case 1:
+                       mViewPager.setPageTransformer(true, new AccordionTransformer());
+                       break;
+                   case 2:
+                       mViewPager.setPageTransformer(true, new BackgroundToForegroundTransformer());
+                       break;
+                   case 3:
+                       mViewPager.setPageTransformer(true, new CubeInTransformer());
+                       break;
+                   case 4:
+                       mViewPager.setPageTransformer(true, new CubeOutTransformer());
+                       break;
+                   case 5:
+                       mViewPager.setPageTransformer(true, new DepthPageTransformer());
+                       break;
+                   case 6:
+                       mViewPager.setPageTransformer(true, new FlipHorizontalTransformer());
+                       break;
+                   case 7:
+                       mViewPager.setPageTransformer(true, new FlipVerticalTransformer());
+                       break;
+                   case 8:
+                       mViewPager.setPageTransformer(true, new ForegroundToBackgroundTransformer());
+                       break;
+                   case 9:
+                       mViewPager.setPageTransformer(true, new RotateDownTransformer());
+                       break;
+                   case 10:
+                       mViewPager.setPageTransformer(true, new RotateUpTransformer());
+                      break;
+                   case 11:
+                       mViewPager.setPageTransformer(true, new ScaleInOutTransformer());
+                       break;
+                   case 12:
+                       mViewPager.setPageTransformer(true, new StackTransformer());
+                       break;
+                   case 13:
+                       mViewPager.setPageTransformer(true, new TabletTransformer());
+                       break;
+                   case 14:
+                       mViewPager.setPageTransformer(true, new ZoomInTransformer());
+                       break;
+                   case 15:
+                       mViewPager.setPageTransformer(true, new ZoomOutSlideTransformer());
+                       break;
+                   case 16:
+                       mViewPager.setPageTransformer(true, new ZoomOutTranformer());
+                       break;
+                   default:
+                       break;
+               }
+             } catch (Exception e){}
+           }
+       }
+
 }

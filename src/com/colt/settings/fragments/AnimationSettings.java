@@ -22,6 +22,7 @@ import android.database.ContentObserver;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemProperties;
+import android.os.Handler;
 import android.os.UserHandle;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
@@ -46,9 +47,11 @@ public class AnimationSettings extends SettingsPreferenceFragment
             implements OnPreferenceChangeListener {
 
     private static final String KEY_SCREEN_OFF_ANIMATION = "screen_off_animation";
+    private static final String KEY_SS_TABS_EFFECT = "tabs_effect";
 
     private ListPreference mScreenOffAnimation;
     private Context mContext;
+    ListPreference mListViewTabsEffect;
 
     @Override
     public int getMetricsCategory() {
@@ -69,6 +72,13 @@ public class AnimationSettings extends SettingsPreferenceFragment
         mScreenOffAnimation.setValue(Integer.toString(screenOffAnimation));
         mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
         mScreenOffAnimation.setOnPreferenceChangeListener(this);
+
+	mListViewTabsEffect = (ListPreference) findPreference(KEY_SS_TABS_EFFECT);
+        int tabsEffect = Settings.System.getInt(getContentResolver(),
+                Settings.System.COLT_SETTINGS_TABS_EFFECT, 0);
+        mListViewTabsEffect.setValue(String.valueOf(tabsEffect));
+        mListViewTabsEffect.setSummary(mListViewTabsEffect.getEntry());
+        mListViewTabsEffect.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -85,7 +95,14 @@ public class AnimationSettings extends SettingsPreferenceFragment
             mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[index]);
             Settings.Global.putInt(getContentResolver(), Settings.Global.SCREEN_OFF_ANIMATION, value);
             return true;
-        }
+	} else if (preference == mListViewTabsEffect) {
+            int value = Integer.valueOf((String) newValue);
+            int index = mListViewTabsEffect.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getContentResolver(),
+                     Settings.System.COLT_SETTINGS_TABS_EFFECT, value);
+            mListViewTabsEffect.setSummary(mListViewTabsEffect.getEntries()[index]);
+            return true;
+         }
         return false;
     }
 }

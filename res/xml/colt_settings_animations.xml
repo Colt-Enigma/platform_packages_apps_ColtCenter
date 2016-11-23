@@ -23,5 +23,12 @@
         android:entryValues="@array/screen_off_animation_values"
         android:persistent="false"/>
 
+    <com.colt.settings.preferences.SystemSettingListPreference
+        android:key="tabs_effect"
+        android:title="@string/tabs_effect_title"
+        android:entries="@array/tabs_effect_entries"
+        android:entryValues="@array/tabs_effect_values"
+        android:persistent="false" />
+
 </PreferenceScreen>
 
