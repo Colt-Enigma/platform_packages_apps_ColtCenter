@@ -61,4 +61,10 @@
              android:summary="@string/allow_signature_fake_summary"
              android:defaultValue="false" />
 
+     <Preference
+         android:id="@+id/alarm_blocker"
+         android:title="@string/alarm_blocker"
+         android:summary="@string/alarm_blocker_summary"
+         android:fragment="com.colt.settings.fragments.AlarmBlocker" />
+
   </PreferenceScreen>
