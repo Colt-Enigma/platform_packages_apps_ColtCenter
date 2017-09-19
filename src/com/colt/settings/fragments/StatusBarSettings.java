@@ -44,7 +44,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
 
         addPreferencesFromResource(R.xml.statusbar_settings);
     }
- 
+
 @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.COLT;
