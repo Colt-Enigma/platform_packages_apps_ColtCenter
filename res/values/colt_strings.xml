@@ -1349,4 +1349,9 @@
     <string name="gaming_mode_notifications_all_title">Show toasts and notifications</string>
     <string name="gaming_mode_dynamic_title">Dynamic Gaming mode</string>
     <string name="gaming_mode_dynamic_summary">Whenever you open any app and the system finds it to be a game, it will be added in gaming list automatically. Please note that this does not work for every game app.</string>
+
+    <!-- Roaming indicator icon -->
+    <string name="roaming_indicator_icon_title">Roaming indicator</string>
+    <string name="roaming_indicator_icon_summary">Display roaming indicator in signal icon when in roaming mode</string>
+
 </resources>
