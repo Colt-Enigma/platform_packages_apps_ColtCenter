@@ -943,4 +943,8 @@
     <!-- Swap hw keys -->
     <string name="swap_navigation_keys_title">Swap hardware buttons</string>
     <string name="swap_navigation_keys_title_summary">Swap the order of recents and back buttons</string>
+
+    <!-- Brightness control -->
+    <string name="status_bar_toggle_brightness">Brightness control</string>
+    <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
 </resources>
