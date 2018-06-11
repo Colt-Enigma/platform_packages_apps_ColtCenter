@@ -30,6 +30,7 @@ import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
+import android.support.v14.preference.SwitchPreference;
 
 import com.android.settings.SettingsPreferenceFragment;
 
@@ -40,9 +41,11 @@ public class NotificationSettings extends SettingsPreferenceFragment
 
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
     private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
+    private static final String FORCE_EXPANDED_NOTIFICATIONS = "force_expanded_notifications";
 
     private Preference mChargingLeds;
     private ListPreference mFlashlightOnCall;
+    private SwitchPreference mForceExpanded;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -75,6 +78,11 @@ public class NotificationSettings extends SettingsPreferenceFragment
          if (!Utils.deviceSupportsFlashLight(getActivity())) {
              prefScreen.removePreference(FlashOnCall);
          }
+
+        mForceExpanded = (SwitchPreference) findPreference(FORCE_EXPANDED_NOTIFICATIONS);
+        mForceExpanded.setChecked((Settings.System.getInt(getContentResolver(),
+		        Settings.System.FORCE_EXPANDED_NOTIFICATIONS, 0) == 1));
+
      }
 
      public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -87,6 +95,11 @@ public class NotificationSettings extends SettingsPreferenceFragment
                 mFlashlightOnCall.setValue(String.valueOf(flashlightValue));
                 mFlashlightOnCall.setSummary(mFlashlightOnCall.getEntry());
                 return true;
+	     } else if (preference == mForceExpanded) {
+            boolean checked = ((SwitchPreference)preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.FORCE_EXPANDED_NOTIFICATIONS, checked ? 1:0);
+            return true;
              }
          return false;
     }
