@@ -42,4 +42,10 @@
              android:title="@string/systemui_recents_mem_display_title" 
              android:summary="@string/systemui_recents_mem_display_summary" 
              android:defaultValue="false" /> 
+
+    <PreferenceScreen 
+             android:key="recent_styles" 
+             android:title="@string/recent_styles" 
+             android:fragment="com.colt.settings.fragments.RecentsStyles" 
+             android:summary="@string/recent_styles_summary"/> 
 </PreferenceScreen>
