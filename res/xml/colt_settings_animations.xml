@@ -36,5 +36,11 @@
             android:entries="@array/toast_animation_entries"
             android:entryValues="@array/toast_animation_values"
             android:persistent="false" />
+
+     <PreferenceScreen
+            android:key="system_animation"
+            android:title="@string/system_animation_title"
+            android:summary="@string/system_animation_summary"
+            android:fragment="com.colt.settings.fragments.ui.AnimationControls" />
 </PreferenceScreen>
 
