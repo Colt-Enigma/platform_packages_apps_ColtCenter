@@ -42,4 +42,10 @@
              android:summary="@string/animation_settings_summary"
              android:fragment="com.colt.settings.fragments.AnimationSettings"
              settings:allowDividerAbove="true" />
+
+    <Preference
+          android:key="batterybar_settings"
+          android:title="@string/battery_bar_title"
+          android:summary="@string/battery_bar_summary"
+          android:fragment="com.colt.settings.fragments.BatterybarSettings" />
   </PreferenceScreen>
