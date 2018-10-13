@@ -1321,4 +1321,7 @@
 
     <string name="hide_lockscreen_icon_title">Hide lock screen icon</string>
     <string name="hide_lockscreen_icon_summary">Change the lock screen icon visibility</string>
+
+    <string name="hide_lockscreen_indicator_display_title">Hide bottom status text</string>
+    <string name="hide_lockscreen_indicator_display_summary">Hide charging information and unlock hints</string>
 </resources>
