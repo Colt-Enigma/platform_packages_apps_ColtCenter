@@ -13,4 +13,15 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <Preference
+          android:key="omni_theme_select_activity"
+          android:title="@string/colt_theme_select_title"
+          android:summary="@string/colt_theme_select_summary"
+          android:persistent="false" >
+          <intent android:action="android.intent.action.MAIN"
+                  android:targetPackage="org.omnirom.omnistyle"
+                  android:targetClass="org.omnirom.omnistyle.BrowseThemesActivity" />
+     </Preference>
+
+
 </PreferenceScreen>
