@@ -232,4 +232,7 @@
      <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
      <string name="show_cpu_info_summary">Screen overlay showing current CPU info</string>
 
+<!-- QuickSettings Panel Transparency -->
+     <string name="qs_panel_alpha_title">QS Opacity</string>
+
 </resources>
