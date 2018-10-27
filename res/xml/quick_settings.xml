@@ -18,4 +18,16 @@
              android:summary="@string/show_cpu_info_summary" 
              android:defaultValue="false" />
 
+<com.colt.settings.preferences.SecureSettingSwitchPreference
+         android:key="qs_show_brightness"
+         android:title="@string/qs_show_brightness_title"
+         android:summary="@string/qs_show_brightness_summary"
+         android:defaultValue="true" />
+
+<com.colt.settings.preferences.SecureSettingSwitchPreference
+         android:key="qs_brightness_position_bottom"
+         android:title="@string/qs_brightness_position_bottom_title"
+         android:summary="@string/qs_brightness_position_bottom_summary"
+         android:defaultValue="false"
+         android:dependency="qs_show_brightness" />
 </PreferenceScreen>
