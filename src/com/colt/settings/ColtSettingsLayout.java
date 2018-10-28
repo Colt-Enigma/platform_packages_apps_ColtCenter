@@ -51,7 +51,12 @@ import com.colt.settings.fragments.About;
 
 import com.colt.settings.fragments.StatusBarSettings;
 import com.colt.settings.fragments.QuickSettings;
+import com.colt.settings.fragments.RecentsSettings;
+import com.colt.settings.fragments.ButtonSettings;
+import com.colt.settings.fragments.NavbarSettings;
+import com.colt.settings.fragments.NotificationSettings;
 import com.colt.settings.fragments.LockScreenSettings;
+import com.colt.settings.fragments.PowerMenuSettings;
 import com.colt.settings.fragments.MiscSettings;
 import com.colt.settings.fragments.About;
 
@@ -112,9 +117,14 @@ public class ColtSettingsLayout extends SettingsPreferenceFragment {
 */
 	    frags[0] = new StatusBarSettings();
 	    frags[1] = new QuickSettings();
-	    frags[2] = new LockScreenSettings();
-	    frags[3] = new MiscSettings();
-	    frags[4] = new About();
+	    frags[2] = new RecentsSettings();
+	    frags[3] = new ButtonSettings();
+	    frags[4] = new NavbarSettings();
+	    frags[5] = new NotificationSettings();
+	    frags[6] = new LockScreenSettings();
+            frags[7] = new PowerMenuSettings();
+	    frags[8] = new MiscSettings();
+	    frags[9] = new About();
         }
 
         @Override
@@ -151,7 +161,12 @@ public class ColtSettingsLayout extends SettingsPreferenceFragment {
 */
 	    getString(R.string.statusbar_settings_title),
 	    getString(R.string.quicksettings_title),
-	    getString(R.string.lockscreen_settings_title),
+	    getString(R.string.recents_title),
+	    getString(R.string.button_title),
+	    getString(R.string.navbar_tuner_title),
+            getString(R.string.notifications_title),
+            getString(R.string.lockscreen_settings_title),
+            getString(R.string.powermenu_title),
 	    getString(R.string.misc_settings_title),
 	    getString(R.string.about_colt)
         };
