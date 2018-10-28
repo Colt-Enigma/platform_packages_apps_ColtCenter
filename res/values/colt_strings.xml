@@ -30,6 +30,10 @@
   <!-- Quick setting categories -->
     <string name="qs_tiles_category">Tiles</string>
 
+  <string name="recents_title">Recents apps</string>
+
+  <string name="notifications_title">Notifications</string>
+
    <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
     <string name="press_color_to_apply">Press on color below to apply</string>

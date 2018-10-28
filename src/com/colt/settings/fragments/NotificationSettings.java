@@ -26,7 +26,7 @@ import android.support.v7.preference.PreferenceScreen;
 
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.colt.settings.preferences.Utils;
+import com.colt.settings.utils.Utils;
 
 public class NotificationSettings extends SettingsPreferenceFragment {
 
