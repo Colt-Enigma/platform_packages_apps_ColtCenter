@@ -52,6 +52,9 @@ public class RecentsSettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
+	mFooterPreferenceMixin.createFooterPreference()
+		.setTitle(R.string.dumb_dev);
+
         addPreferencesFromResource(R.xml.colt_settings_recents);
 
         ContentResolver resolver = getActivity().getContentResolver();
