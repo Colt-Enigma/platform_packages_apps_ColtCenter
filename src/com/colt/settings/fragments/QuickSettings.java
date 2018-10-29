@@ -32,10 +32,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String OMNI_QS_PANEL_BG_ALPHA = "qs_panel_bg_alpha";
     private static final String QS_TILE_STYLE = "qs_tile_style";
     private static final String QUICK_PULLDOWN = "quick_pulldown";
+    private static final String PREF_SMART_PULLDOWN = "smart_pulldown";
 
     private CustomSeekBarPreference mQsPanelAlpha;
     private ListPreference mQsTileStyle;
     private ListPreference mQuickPulldown;
+    private ListPreference mSmartPulldown;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -52,22 +54,30 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mQsPanelAlpha.setValue(qsPanelAlpha);
         mQsPanelAlpha.setOnPreferenceChangeListener(this);
 
-       // QS Styles
-       mQsTileStyle = (ListPreference) findPreference(QS_TILE_STYLE);
-       int qsTileStyle = Settings.System.getIntForUser(resolver,
-               Settings.System.QS_TILE_STYLE, 0,
-	       UserHandle.USER_CURRENT);
-       int valueIndex = mQsTileStyle.findIndexOfValue(String.valueOf(qsTileStyle));
-       mQsTileStyle.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
-       mQsTileStyle.setSummary(mQsTileStyle.getEntry());
-       mQsTileStyle.setOnPreferenceChangeListener(this);
+        // QS Styles
+        mQsTileStyle = (ListPreference) findPreference(QS_TILE_STYLE);
+        int qsTileStyle = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_TILE_STYLE, 0,
+  	        UserHandle.USER_CURRENT);
+        int valueIndex = mQsTileStyle.findIndexOfValue(String.valueOf(qsTileStyle));
+        mQsTileStyle.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
+        mQsTileStyle.setSummary(mQsTileStyle.getEntry());
+        mQsTileStyle.setOnPreferenceChangeListener(this);
 
+        // Quick Pull Down
         mQuickPulldown = (ListPreference) findPreference(QUICK_PULLDOWN);
         mQuickPulldown.setOnPreferenceChangeListener(this);
         int quickPulldownValue = Settings.System.getIntForUser(resolver,
                 Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
         mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
         updatePulldownSummary(quickPulldownValue);
+
+        // Smart Pull Down
+        mSmartPulldown = (ListPreference) findPreference(PREF_SMART_PULLDOWN);
+        mSmartPulldown.setOnPreferenceChangeListener(this);
+        int smartPulldown = Settings.System.getInt(resolver, Settings.System.QS_SMART_PULLDOWN, 0);
+        mSmartPulldown.setValue(String.valueOf(smartPulldown));
+        updateSmartPulldownSummary(smartPulldown);
      }
 
     @Override
@@ -91,6 +101,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                     quickPulldownValue, UserHandle.USER_CURRENT);
             updatePulldownSummary(quickPulldownValue);
             return true;
+        } else if (preference == mSmartPulldown) {
+            int smartPulldown = Integer.valueOf((String) newValue);
+            Settings.System.putInt(resolver, Settings.System.QS_SMART_PULLDOWN, smartPulldown);
+            updateSmartPulldownSummary(smartPulldown);
+            return true;
         }
         return false;
     }
@@ -113,6 +128,21 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                     ? R.string.quick_pulldown_left
                     : R.string.quick_pulldown_right);
             mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_summary, direction));
+        }
+    }
+
+    private void updateSmartPulldownSummary(int value) {
+        Resources res = getResources();
+         if (value == 0) {
+            // Smart pulldown deactivated
+            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_off));
+        } else if (value == 3) {
+            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_none_summary));
+        } else {
+            String type = res.getString(value == 1
+                    ? R.string.smart_pulldown_dismissable
+                    : R.string.smart_pulldown_ongoing);
+            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_summary, type));
         }
     }
 }
