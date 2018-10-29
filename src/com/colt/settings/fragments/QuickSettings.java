@@ -31,9 +31,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
     private static final String OMNI_QS_PANEL_BG_ALPHA = "qs_panel_bg_alpha";
     private static final String QS_TILE_STYLE = "qs_tile_style";
+    private static final String QUICK_PULLDOWN = "quick_pulldown";
 
     private CustomSeekBarPreference mQsPanelAlpha;
     private ListPreference mQsTileStyle;
+    private ListPreference mQuickPulldown;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -59,6 +61,13 @@ public class QuickSettings extends SettingsPreferenceFragment implements
        mQsTileStyle.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
        mQsTileStyle.setSummary(mQsTileStyle.getEntry());
        mQsTileStyle.setOnPreferenceChangeListener(this);
+
+        mQuickPulldown = (ListPreference) findPreference(QUICK_PULLDOWN);
+        mQuickPulldown.setOnPreferenceChangeListener(this);
+        int quickPulldownValue = Settings.System.getIntForUser(resolver,
+                Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
+        mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
+        updatePulldownSummary(quickPulldownValue);
      }
 
     @Override
@@ -76,6 +85,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                     qsTileStyleValue, UserHandle.USER_CURRENT);
             mQsTileStyle.setSummary(mQsTileStyle.getEntries()[qsTileStyleValue]);
             return true;
+        } else if (preference == mQuickPulldown) {
+            int quickPulldownValue = Integer.valueOf((String) newValue);
+            Settings.System.putIntForUser(resolver, Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
+                    quickPulldownValue, UserHandle.USER_CURRENT);
+            updatePulldownSummary(quickPulldownValue);
+            return true;
         }
         return false;
     }
@@ -85,4 +100,19 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         return MetricsProto.MetricsEvent.COLT;
     }
 
+    private void updatePulldownSummary(int value) {
+        Resources res = getResources();
+         if (value == 0) {
+            // quick pulldown deactivated
+            mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_off));
+        } else if (value == 3) {
+            // quick pulldown always
+            mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_summary_always));
+        } else {
+            String direction = res.getString(value == 2
+                    ? R.string.quick_pulldown_left
+                    : R.string.quick_pulldown_right);
+            mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_summary, direction));
+        }
+    }
 }
