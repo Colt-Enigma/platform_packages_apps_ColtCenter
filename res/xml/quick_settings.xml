@@ -52,4 +52,10 @@
         android:entryValues="@array/smart_pulldown_values"
         android:persistent="false" />
 
+    <com.colt.settings.preferences.SecureSettingSwitchPreference
+         android:key="quick_settings_vibrate"
+         android:title="@string/quick_settings_vibrate_title"
+         android:summary="@string/quick_settings_vibrate_summary"
+         android:defaultValue="false" />
+
 </PreferenceScreen>

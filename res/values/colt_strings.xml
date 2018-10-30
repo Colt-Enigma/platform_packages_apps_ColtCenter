@@ -307,4 +307,8 @@
      <string name="volume_key_cursor_control_on">Volume up/down moves cursor left/right</string>
      <string name="volume_key_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
 
+     <!-- QuickSettings haptic feedback -->
+     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
+     <string name="quick_settings_vibrate_summary">Vibrate when touching QS tiles</string>
+
 </resources>
