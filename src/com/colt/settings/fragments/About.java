@@ -55,7 +55,7 @@ public class About extends SettingsPreferenceFragment {
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
         if (preference == mSourceUrl) {
-            launchUrl("https://github.com/coltos");
+            launchUrl("https://github.com/colt-enigma");
         } else if (preference == mGoogleUrl) {
             launchUrl("https://plus.google.com/u/2/communities/102067248475500399675");
 	} else if (preference == mShare) {

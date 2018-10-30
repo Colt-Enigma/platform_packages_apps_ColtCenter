@@ -26,7 +26,7 @@
             android:summary="@string/device_yu_tomato_summary"
             android:selectable="false" />
 
-	<Preference
+<!--	<Preference
             android:id="@+id/device_yu_lettuce"
             android:title="@string/device_yu_lettuce"
             android:summary="@string/device_yu_lettuce_summary"
@@ -42,7 +42,7 @@
             android:id="@+id/device_yu_un"
             android:title="@string/device_yu_un"
             android:summary="@string/device_yu_un_summary"
-            android:selectable="false" />
+            android:selectable="false" /> -->
 
 </PreferenceCategory>
 
@@ -70,11 +70,11 @@
     <PreferenceCategory
     android:title="@string/device_category_oneplus_title">
 
-	   <Preference
+<!--	   <Preference
             android:id="@+id/device_oneplus_oneplus2"
             android:title="@string/device_oneplus_oneplus2"
             android:summary="@string/device_oneplus_oneplus2_summary"
-	    android:selectable="false" />
+	    android:selectable="false" /> -->
 
            <Preference
             android:id="@+id/device_oneplus_oneplus3"
@@ -85,7 +85,7 @@
     </PreferenceCategory>
 
 <!-- XIAOMI -->
-    <PreferenceCategory
+<!--    <PreferenceCategory
     android:title="@string/device_category_xiaomi_title">
 
 	    <Preference
@@ -107,10 +107,10 @@
             android:selectable="false" />
 
 
-    </PreferenceCategory>
+    </PreferenceCategory> -->
 
  <!-- MOTOROLA -->
-    <PreferenceCategory
+<!--    <PreferenceCategory
     android:title="@string/device_category_motorola_title">
 	
 	    <Preference
@@ -119,10 +119,10 @@
             android:summary="@string/device_moto_athene_summary"
 	    android:selectable="false" />
 
-    </PreferenceCategory>
+    </PreferenceCategory> -->
 
 <!-- LG -->
-    <PreferenceCategory
+<!--    <PreferenceCategory
     android:title="@string/device_category_lg_title">
 
 	    <Preference
@@ -131,6 +131,6 @@
             android:summary="@string/device_lg_g3_summary"
 	    android:selectable="false" />
     
-      </PreferenceCategory>
+      </PreferenceCategory> -->
 
 </PreferenceScreen>

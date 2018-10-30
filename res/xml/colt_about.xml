@@ -72,10 +72,10 @@
             android:title="@string/nimit_title"
             android:summary="@string/nimit_summary" />
 
-	<PreferenceScreen
+<!--	<PreferenceScreen
             android:key="mem5"
             android:title="@string/nikhil_title"
-            android:summary="@string/nikhil_summary" />
+            android:summary="@string/nikhil_summary" /> -->
 
 	<PreferenceScreen
             android:key="mem6"
@@ -102,10 +102,10 @@
             android:title="@string/srb_title"
             android:summary="@string/srb_summary" />
 
-	<PreferenceScreen
+<!--	<PreferenceScreen
             android:key="mem11"
             android:title="@string/anupmm_title"
-            android:summary="@string/anupam_summary" />
+            android:summary="@string/anupam_summary" /> -->
 
 </PreferenceCategory>
 
