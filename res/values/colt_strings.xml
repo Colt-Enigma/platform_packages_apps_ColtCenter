@@ -369,4 +369,8 @@
      <string name="battery_light_full_color">Almost full battery</string>
      <string name="battery_light_reallyfull_color">Full (100) battery</string>
 
+  <!-- ADB debugging notifications -->
+     <string name="adb_notify">ADB notification</string>
+     <string name="adb_notify_summary">Display a notification when android debugging is enabled</string>
+
 </resources>
