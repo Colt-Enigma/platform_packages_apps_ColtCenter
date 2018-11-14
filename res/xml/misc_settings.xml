@@ -29,6 +29,13 @@
              android:summary="@string/wakeup_when_plugged_unplugged_summary"
              android:defaultValue="true" />
 
+  <ListPreference
+          android:key="qs_header_style"
+          android:title="@string/qs_header_style_title"
+          android:persistent="false"
+          android:entries="@array/qs_header_style_entries"
+          android:entryValues="@array/qs_header_style_values" />
+
   <Preference 
          android:key="edge_gestures" 
          android:title="@string/edge_gestures_title" 
