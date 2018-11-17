@@ -41,7 +41,7 @@
 <PreferenceCategory
          android:key="weather_lockscreen_key"
          android:title="@string/weather_title"
-	 settings:controller="com.colt.settings.fragments.WeatherPreferenceController">
+	 settings:controller="com.android.settings.security.screenlock.WeatherPreferenceController">
           <com.colt.settings.preferences.SystemSettingListPreference
              android:key="weather_lockscreen_unit"
              android:dialogTitle="@string/weather_unit"

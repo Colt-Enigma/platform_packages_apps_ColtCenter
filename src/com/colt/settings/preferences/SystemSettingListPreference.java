@@ -17,50 +17,33 @@
 package com.colt.settings.preferences;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.support.v7.preference.PreferenceDataStore;
-import android.support.v7.preference.ListPreference;
-
-import android.provider.Settings;
 
 public class SystemSettingListPreference extends ListPreference {
-    public SystemSettingListPreference(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-        setPreferenceDataStore(new DataStore());
-    }
 
-    public SystemSettingListPreference(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        setPreferenceDataStore(new DataStore());
-    }
+     public SystemSettingListPreference(Context context, AttributeSet attrs, int defStyle) {
+         super(context, attrs, defStyle);
+         setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
+     }
 
-    public SystemSettingListPreference(Context context) {
-        super(context);
-        setPreferenceDataStore(new DataStore());
-    }
+     public SystemSettingListPreference(Context context, AttributeSet attrs) {
+         super(context, attrs);
+         setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
+     }
 
-    public int getIntValue(int defValue) {
-        return getValue() == null ? defValue : Integer.valueOf(getValue());
-    }
+     public SystemSettingListPreference(Context context) {
+         super(context);
+         setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
+     }
 
-    protected void putString(String key, String value) {
-        Settings.System.putString(getContext().getContentResolver(), key, value);
-    }
+     @Override
+     protected void onSetInitialValue(boolean restoreValue, Object defaultValue) {
+         // This is what default ListPreference implementation is doing without respecting
+         // real default value:
+         //setValue(restoreValue ? getPersistedString(mValue) : (String) defaultValue);
+         // Instead, we better do
+         setValue(restoreValue ? getPersistedString((String) defaultValue) : (String) defaultValue);
+     }
 
-    protected String getString(String key, String defaultValue) {
-        String result = Settings.System.getString(getContext().getContentResolver(),key);
-        return result == null ? defaultValue : result;
-    }
-
-    private class DataStore extends PreferenceDataStore {
-        @Override
-        public void putString(String key, String value) {
-            SystemSettingListPreference.this.putString(key, value);
-        }
-
-        @Override
-        public String getString(String key, String defaultValue) {
-            return SystemSettingListPreference.this.getString(key, defaultValue);
-        }
-    }
-}
+ }
