@@ -244,6 +244,8 @@
 <!-- Quick Settings brightness slider -->
      <string name="qs_show_brightness_title">Brightness slider</string>
      <string name="qs_show_brightness_summary">Show a brightness slider in the quick settings panel</string>
+     <string name="qs_brightness_position_bottom_title">Brightness slider on bottom</string>
+     <string name="qs_brightness_position_bottom_summary">Show a brightness slider on bottom quick settings</string>
 
 <!-- Double Tap -->
      <string name="dtts_category_header">Double tap to sleep</string>
@@ -726,4 +728,12 @@
      <string name="qs_header_lightgrey">Light Grey</string>
      <string name="qs_header_accent">Accent Based</string>
      <string name="qs_header_transparent">Transparent</string>
+
+     <!-- Quick Settings brightness icon -->
+     <string name="brightness_icon_title">Adaptive brightness button</string>
+     <string name="brightness_icon_summary">Show adaptive brightness button</string>
+
+     <!-- Quick Settings brightness side buttons -->
+     <string name="brightness_side_buttons_title">Brightness control buttons</string>
+     <string name="brightness_side_buttons_summary">Show buttons to increase or decrease the brightness</string>
 </resources>
