@@ -37,7 +37,7 @@
     <!-- YU -->
 
     <string name="device_yu_tomato">Yu Yureka</string>
-    <string name="device_yu_tomato_summary">tomato\nMaintainer - Rakesh Batra</string>
+    <string name="device_yu_tomato_summary">tomato\nMaintainer - Vinoth Raja</string>
 
     <string name="device_yu_black">Yu Black</string>
     <string name="device_yu_black_summary">garlic\nMaintainer - Nitin1438</string>
@@ -60,7 +60,7 @@
     <string name="device_oneplus_oneplus2_summary">oneplus2\nMaintainer - Nikhil Verma</string>
 
     <string name="device_oneplus_oneplus3">OnePlus 3</string>
-    <string name="device_oneplus_oneplus3_summary">oneplus3-3T(Unified)\nMaintainer - SuperDroid-BOND</string>
+    <string name="device_oneplus_oneplus3_summary">oneplus3-3T(Unified)\nMaintainer - Rakesh Batra</string>
 
     <!-- Xiaomi -->
     <string name="device_xiaomi_redmi2">Redmi 2</string>
