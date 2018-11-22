@@ -469,5 +469,20 @@
     <string name="lock_ownerinfo_font_summary">Change the default font of the lockscreen owner info</string>
     <string name="lock_ownerinfo_font_dialog_title">Select lock ownerinfo font</string>
     <string name="lockowner_font_size_title">Owner info font size</string>
+
+   <!-- General strings -->
+    <string name="ok">OK</string>
+    <string name="reset">Reset</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="default_string">Default</string>
+    <string name="add">Add</string>
+    <string name="enabled">Enabled</string>
+    <string name="choose_app">Choose application</string>
+    <string name="help">Help</string>
+    <string name="reset_message">Reset all entries to default?</string>
+    <string name="attention">Attention</string>
+    <string name="unit_percent">\u0025</string>
+    <string name="unit_x1000ms">x1000 ms</string>
   
 </resources>
