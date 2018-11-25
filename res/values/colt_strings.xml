@@ -484,5 +484,8 @@
     <string name="attention">Attention</string>
     <string name="unit_percent">\u0025</string>
     <string name="unit_x1000ms">x1000 ms</string>
-  
+
+    <!-- Double tap-to-sleep -->
+     <string name="double_tap_to_sleep_title">Status bar</string>
+     <string name="double_tap_to_sleep_summary">Double-tap status bar to put the device to sleep</string>  
 </resources>
