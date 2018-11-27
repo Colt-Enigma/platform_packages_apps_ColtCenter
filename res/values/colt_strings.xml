@@ -1287,4 +1287,10 @@
     <!-- Notifications while screen on -->
     <string name="notification_sound_vib_screen_on_title">Noisy notifications if screen on</string>
     <string name="notification_sound_vib_screen_on_summary">Play sound and vibration for notifications when screen is on</string>
+
+    <!-- Team Info -->
+    <string name="about_team_title">About ColtOS Team</string>
+    <string name="about_team_summary">Lets see who all are there :)</string>
+    <string name="colt_team_title">Meet Our ColtOS Team</string>
+
 </resources>
