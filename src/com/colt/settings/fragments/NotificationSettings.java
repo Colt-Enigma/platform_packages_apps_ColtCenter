@@ -18,31 +18,21 @@ package com.colt.settings.fragments;
 
 import com.android.internal.logging.nano.MetricsProto;
 
-import android.content.Context;
-import android.content.ContentResolver;
-import android.os.UserHandle;
-import android.provider.Settings;
 import android.os.Bundle;
 import com.android.settings.R;
 
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
-import android.support.v7.preference.ListPreference;
-import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.colt.settings.utils.Utils;
 
-public class NotificationSettings extends SettingsPreferenceFragment
-                          implements OnPreferenceChangeListener {
+public class NotificationSettings extends SettingsPreferenceFragment {
 
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
-    private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
-
     private Preference mChargingLeds;
-    private ListPreference mFlashlightOnCall;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -64,31 +54,6 @@ public class NotificationSettings extends SettingsPreferenceFragment
             prefScreen.removePreference(mChargingLeds);
         }
 
-	mFlashlightOnCall = (ListPreference) findPreference(FLASHLIGHT_ON_CALL);
-         Preference FlashOnCall = findPreference("flashlight_on_call");
-         int flashlightValue = Settings.System.getInt(getContentResolver(),
-                 Settings.System.FLASHLIGHT_ON_CALL, 1);
-         mFlashlightOnCall.setValue(String.valueOf(flashlightValue));
-         mFlashlightOnCall.setSummary(mFlashlightOnCall.getEntry());
-         mFlashlightOnCall.setOnPreferenceChangeListener(this);
-
-         if (!Utils.deviceSupportsFlashLight(getActivity())) {
-             prefScreen.removePreference(FlashOnCall);
-         }
-     }
-
-     public boolean onPreferenceChange(Preference preference, Object newValue) {
-          ContentResolver resolver = getActivity().getContentResolver();
-
-             if (preference == mFlashlightOnCall) {
-                int flashlightValue = Integer.parseInt(((String) newValue).toString());
-                Settings.System.putInt(resolver,
-                      Settings.System.FLASHLIGHT_ON_CALL, flashlightValue);
-                mFlashlightOnCall.setValue(String.valueOf(flashlightValue));
-                mFlashlightOnCall.setSummary(mFlashlightOnCall.getEntry());
-                return true;
-             }
-         return false;
     }
 
     @Override
