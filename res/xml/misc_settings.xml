@@ -29,4 +29,11 @@
              android:summary="@string/wakeup_when_plugged_unplugged_summary"
              android:defaultValue="true" />
 
+
+  <Preference 
+         android:key="edge_gestures" 
+         android:title="@string/edge_gestures_title" 
+         android:summary="@string/edge_gestures_summary" 
+         android:fragment="com.colt.settings.fragments.EdgeGesturesSettings"/>
+
 </PreferenceScreen>
