@@ -37,11 +37,18 @@
           android:entryValues="@array/qs_header_style_values" />
 
   <!-- Status Bar Logo Style -->
-    <Preference
+  <Preference
         android:key="status_bar_logo"
         android:title="@string/status_bar_logo_category_title"
         android:summary="@string/status_bar_logo_category_summary"
         android:fragment="com.colt.settings.fragments.StatusBarLogo" />
+
+  <com.colt.settings.preferences.SystemSettingIntListPreference
+         android:key="theming_settings_dashboard_icons"
+         android:title="@string/theming_settings_dashboard_icons_title"
+         android:entries="@array/theming_settings_dashboard_icons_entries"
+         android:entryValues="@array/theming_settings_dashboard_icons_values"
+         android:defaultValue="0" />
 
   <Preference 
          android:key="edge_gestures" 
