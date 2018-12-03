@@ -35,4 +35,11 @@
          android:summary="@string/edge_gestures_summary" 
          android:fragment="com.colt.settings.fragments.EdgeGesturesSettings"/>
 
+   <!-- Animations -->
+         <PreferenceScreen
+             android:key="animations_category"
+             android:title="@string/animation_settings_title"
+             android:summary="@string/animation_settings_summary"
+             android:fragment="com.colt.settings.fragments.AnimationSettings"
+             settings:allowDividerAbove="true" />
   </PreferenceScreen>

@@ -529,4 +529,13 @@
      <!-- Data disabled icon -->
      <string name="data_disabled_icon_title">Show data disabled icon</string>
      <string name="data_disabled_icon_summary">Display the cross sign next to signal bar when data is disabled</string>
+
+     <!-- Screen off animation -->
+     <string name="animation_settings_title">Animations</string>
+     <string name="animation_settings_summary">System Wide Animation Options</string>
+     <string name="screen_off_animation_fade">Simple fade</string>
+     <string name="screen_off_animation_color">Color fade</string>
+     <string name="screen_off_animation_crt">CRT</string>
+     <string name="screen_off_animation_scale">Scale</string>
+     <string name="screen_off_animation_title">Screen off animation</string>
 </resources>
