@@ -526,4 +526,7 @@
      <string name="flashlight_on_call_dnd">Blink flashlight only in DND mode</string>
      <string name="flashlight_on_call_always">Always blink flashlight</string>
 
+     <!-- Data disabled icon -->
+     <string name="data_disabled_icon_title">Show data disabled icon</string>
+     <string name="data_disabled_icon_summary">Display the cross sign next to signal bar when data is disabled</string>
 </resources>
