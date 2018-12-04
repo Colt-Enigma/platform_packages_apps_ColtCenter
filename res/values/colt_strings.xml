@@ -567,4 +567,10 @@
      <!-- Allow fake signature -->
      <string name="allow_signature_fake">Allow signature spoofing</string>
      <string name="allow_signature_fake_summary">Allow apps to bypass security systems by pretending to be a different app.</string> 
+
+     <!-- SeekBar -->
+     <string name="seekbar_no_default_value">No default value set</string>
+     <string name="seekbar_default_value_set">Value set to default of <xliff:g id="number">%d</xliff:g></string>
+     <string name="seekbar_default_value_already_set">Default value is already set</string>
+     <string name="seekbar_default_string">Default</string>
 </resources>
