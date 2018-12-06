@@ -573,4 +573,11 @@
      <string name="seekbar_default_value_set">Value set to default of <xliff:g id="number">%d</xliff:g></string>
      <string name="seekbar_default_value_already_set">Default value is already set</string>
      <string name="seekbar_default_string">Default</string>
+
+    <!-- Navigation gestures -->
+    <string name="gesture_settings_title">OP Navigation gestures</string>
+    <string name="gesture_settings_summary">Use bottom swipe up gestures for navigation</string>
+    <string name="use_bottom_gesture_title">Swipe up gestures</string>
+    <string name="gesture_settings_info">Navigation bar must be disabled!\n\nAvailable gestures:\n\nBack\n- Swipe up on left or right side\n\nHome\n- Swipe up center\n\nRecent apps\n- Swipe up center and hold\n\nLast app\n- Short swipe up and hold in the center</string>
+
 </resources>

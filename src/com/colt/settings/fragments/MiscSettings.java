@@ -52,6 +52,7 @@ public class MiscSettings extends SettingsPreferenceFragment {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.misc_settings);
         PreferenceScreen prefScreen = getPreferenceScreen();
+	mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.gesture_settings_info);
     }
 
     @Override

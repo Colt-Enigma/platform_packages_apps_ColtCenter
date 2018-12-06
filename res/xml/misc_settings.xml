@@ -35,8 +35,14 @@
          android:summary="@string/edge_gestures_summary" 
          android:fragment="com.colt.settings.fragments.EdgeGesturesSettings"/>
 
+     <com.colt.settings.preferences.SystemSettingSwitchPreference
+        android:key="use_bottom_gesture_navigation"
+        android:title="@string/gesture_settings_title"
+        android:summary="@string/gesture_settings_summary"
+        android:defaultValue="false" />
+
    <!-- Animations -->
-         <PreferenceScreen
+   <PreferenceScreen
              android:key="animations_category"
              android:title="@string/animation_settings_title"
              android:summary="@string/animation_settings_summary"
