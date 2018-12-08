@@ -700,6 +700,7 @@
      <string name="aosp_first_time_message">Immersive recents setting is overridden if the expanded desktop is enabled.</string>
 
      <!-- Immersive Recents -->
+     <string name="immersive_recent_title" >Immersive Recent</string>
      <string name="immersive_recents_title">Immersive recents</string>
      <string name="immersive_recents_summary">Change the view of the recents screen</string>
      <string name="immersive_recents_dialog_title">Select recents view</string>
