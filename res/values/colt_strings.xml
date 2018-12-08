@@ -616,4 +616,7 @@
      <string name="screen_state_on_delay_summary">Number of seconds to wait before performing actions after screen on</string>
      <string name="screen_state_toggles_summary_opt">Control how the device network should behave when the screen is off</string>
 
+     <!-- Recents Membar --> 
+     <string name="systemui_recents_mem_display_title">Show Memory Bar</string> 
+     <string name="systemui_recents_mem_display_summary">Enable Disable Ram bar in recent app view</string> 
 </resources>
