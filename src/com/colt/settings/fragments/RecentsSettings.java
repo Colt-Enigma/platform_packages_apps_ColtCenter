@@ -18,8 +18,10 @@ package com.colt.settings.fragments;
 
 import com.android.internal.logging.nano.MetricsProto;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.ContentResolver;
+import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.SystemProperties;
@@ -35,6 +37,7 @@ import com.android.settings.R;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 
 import com.android.internal.util.colt.ColtUtils;
 import com.android.settings.SettingsPreferenceFragment;
@@ -54,7 +57,8 @@ public class RecentsSettings extends SettingsPreferenceFragment implements
     private SwitchPreference mRecentsClearAll;
     private SwitchPreference mClock; 
     private SwitchPreference mDate; 
-    private SharedPreference mPreferences;
+
+    private SharedPreferences mPreferences;
     private Context mContext;
 
     @Override
@@ -106,6 +110,11 @@ public class RecentsSettings extends SettingsPreferenceFragment implements
             mDate.setEnabled(true); 
          } 
 
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        return super.onPreferenceTreeClick(preference);
     }
 
     @Override
