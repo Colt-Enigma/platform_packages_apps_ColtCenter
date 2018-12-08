@@ -714,4 +714,7 @@
      <string name="recents_full_screen_date_title">Show date</string>
      <string name="recents_full_screen_date_summary">Shows date at the top while in immersive</string>
 
+     <!-- Bluetooth battery status --> 
+     <string name="bluetooth_battery_title">Bluetooth battery status</string> 
+     <string name="bluetooth_battery_summary">Display battery status for the connected bluetooth device, if available</string>
 </resources>
