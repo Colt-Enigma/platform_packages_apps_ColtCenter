@@ -56,4 +56,10 @@
          android:title="@string/qs_footer_warnings_title"
          android:summary="@string/qs_footer_warnings_summary"
          android:defaultValue="true" />
+
+    <com.colt.settings.preferences.SystemSettingSwitchPreference
+             android:key="bluetooth_qs_show_battery"
+             android:title="@string/bluetooth_battery_title"
+             android:summary="@string/bluetooth_battery_summary"
+             android:defaultValue="true"/>
 </PreferenceScreen>
