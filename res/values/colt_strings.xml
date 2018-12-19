@@ -278,6 +278,7 @@
     <string name="qstile_oreo">Oreo Style</string>
     <string name="qstile_oreo_circle_trim">Oreo (Circle Trim)</string>
     <string name="qstile_oreo_squircle_trim">Oreo (Squircle Trim)</string>
+    <string name="qstile_inkdrop">Ink</string>
 
     <!-- AOSP Recents component Style -->
     <string name="recents_component_type_title">Recents Style</string>
@@ -749,4 +750,6 @@
     <!-- Volume Panel on Left -->
     <string name="volume_panel_on_left_title">Volume Panel on Left</string>
     <string name="volume_panel_on_left_summary">Change volume panel from right side to left side</string>
+
+    
 </resources>
