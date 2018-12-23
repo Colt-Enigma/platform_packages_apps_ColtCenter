@@ -62,6 +62,29 @@
           android:summary="@string/battery_bar_summary"
           android:fragment="com.colt.settings.fragments.BatterybarSettings" />
 
+
+     <PreferenceCategory 
+        android:title="@string/corners_category" > 
+
+        <com.colt.settings.preferences.SystemSettingSeekBarPreference
+            android:key="sysui_rounded_size"
+            android:title="@string/corner_radius"
+            android:max="45"
+            android:min="1"
+            settings:units=""
+            android:defaultValue="1"
+            android:persistent="false" />
+
+        <com.colt.settings.preferences.SystemSettingSeekBarPreference
+            android:key="sysui_rounded_content_padding"
+            android:title="@string/content_padding"
+            android:max="20"
+            android:min="0"
+            settings:units=""
+            android:persistent="false" />
+
+    </PreferenceCategory>
+
      <com.colt.settings.preferences.GlobalSettingSwitchPreference
              android:key="allow_signature_fake"
              android:title="@string/allow_signature_fake"

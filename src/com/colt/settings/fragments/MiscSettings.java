@@ -43,7 +43,7 @@ import android.os.UserHandle;
 import android.view.View;
 import android.widget.EditText;
 import com.colt.settings.utils.Utils;
-
+import com.colt.settings.preferences.SystemSettingSeekBarPreference;
 import com.android.internal.logging.nano.MetricsProto;
 
 import com.android.settings.R;
@@ -53,7 +53,11 @@ public class MiscSettings extends SettingsPreferenceFragment implements
          Preference.OnPreferenceChangeListener {
 
 	private static final String QS_HEADER_STYLE = "qs_header_style";
+	private static final String SYSUI_ROUNDED_CONTENT_PADDING = "sysui_rounded_content_padding";
+	private static final String SYSUI_ROUNDED_SIZE = "sysui_rounded_size";
 
+	private SystemSettingSeekBarPreference mContentPadding;
+        private SystemSettingSeekBarPreference mCornerRadius;
 	private ListPreference mQsHeaderStyle;
 
 
@@ -76,17 +80,41 @@ public class MiscSettings extends SettingsPreferenceFragment implements
         mQsHeaderStyle.setValueIndex(newIndex >= 0 ? newIndex : 0);
         mQsHeaderStyle.setSummary(mQsHeaderStyle.getEntry());
         mQsHeaderStyle.setOnPreferenceChangeListener(this);
+
+	mContentPadding = (SystemSettingSeekBarPreference) findPreference(SYSUI_ROUNDED_CONTENT_PADDING);
+	int contentPadding = Settings.Secure.getInt(getContentResolver(),
+	        Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING, 1);
+        	mContentPadding.setValue(contentPadding / 1);
+	        mContentPadding.setOnPreferenceChangeListener(this);
+
+        mCornerRadius = (SystemSettingSeekBarPreference) findPreference(SYSUI_ROUNDED_SIZE);
+        int cornerRadius = Settings.Secure.getInt(getContentResolver(),
+                Settings.Secure.SYSUI_ROUNDED_SIZE, 1);
+                mCornerRadius.setValue(cornerRadius / 1);
+                mCornerRadius.setOnPreferenceChangeListener(this);
+
 }
 
      @Override
-     public boolean onPreferenceChange(Preference preference, Object objValue) {
+     public boolean onPreferenceChange(Preference preference, Object newValue) {
          ContentResolver resolver = getActivity().getContentResolver();
-		if (preference == mQsHeaderStyle) {
-             String value = (String) objValue;
+	if (preference == mQsHeaderStyle) {
+             String value = (String) newValue;
              Settings.System.putInt(resolver, Settings.System.QS_HEADER_STYLE,
                     Integer.valueOf(value));
              int newIndex = mQsHeaderStyle.findIndexOfValue(value);
              mQsHeaderStyle.setSummary(mQsHeaderStyle.getEntries()[newIndex]);
+            return true;
+	} else if (preference == mContentPadding) {
+            int value = (Integer) newValue;
+            Settings.Secure.putInt(getContentResolver(),
+                    Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING, value * 1);
+            return true;
+        } else if (preference == mCornerRadius) {
+            int value = (Integer) newValue;
+            Settings.Secure.putInt(getContentResolver(),
+                    Settings.Secure.SYSUI_ROUNDED_SIZE, value * 1);
+            return true;
          }
          return true;
      }

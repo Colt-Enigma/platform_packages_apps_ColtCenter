@@ -751,5 +751,8 @@
     <string name="volume_panel_on_left_title">Volume Panel on Left</string>
     <string name="volume_panel_on_left_summary">Change volume panel from right side to left side</string>
 
-    
+    <!-- Rounded corners -->
+    <string name="corners_category">Corners</string> 
+    <string name="corner_radius">Rounded Corner Radius</string>
+    <string name="content_padding">Corner Content Padding</string>    
 </resources>
