@@ -33,7 +33,8 @@ import android.widget.LinearLayout;
 import com.android.internal.logging.nano.MetricsProto;
 
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.core.InstrumentedFragment;
+import com.android.settings.search.actionbar.SearchMenuController;
 
 /*
 import com.colt.settings.fragments.StatusBarSettings;
@@ -61,7 +62,7 @@ import com.colt.settings.fragments.MiscSettings;
 import com.colt.settings.fragments.About;
 
 
-public class ColtSettingsLayout extends SettingsPreferenceFragment {
+public class ColtSettingsLayout extends InstrumentedFragment {
 
     private static final String TAG = "ColtSettingsLayout";
     ViewPager mViewPager;
@@ -88,6 +89,11 @@ public class ColtSettingsLayout extends SettingsPreferenceFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+    // Set actionbar elevation 0 to make tab and actionbar look uniform.
+        getActivity().getActionBar().setElevation(0);
+        getActivity().getActionBar().setTitle(R.string.colt_interface);
+
     }
 
     @Override
