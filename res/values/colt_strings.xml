@@ -759,4 +759,8 @@
     <!-- Wi-Fi activity indicator -->
     <string name="statusbar_show_wifi_activity_title">Show Wi-Fi data indicators</string>
     <string name="statusbar_show_wifi_activity_summary">Show indicators when Wi-Fi is sending/receiving data like mobile</string>	
+
+    <!-- Notification count -->
+    <string name="status_bar_notif_count_title">Show notification count</string>
+    <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
 </resources>
