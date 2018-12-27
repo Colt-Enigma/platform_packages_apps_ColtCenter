@@ -75,6 +75,12 @@
           android:defaultValue="true"/>
 
      <com.colt.settings.preferences.SystemSettingSwitchPreference
+          android:key="statusbar_show_wifi_activity"
+          android:title="@string/statusbar_show_wifi_activity_title"
+          android:summary="@string/statusbar_show_wifi_activity_summary"
+          android:defaultValue="false" />
+
+     <com.colt.settings.preferences.SystemSettingSwitchPreference
              android:key="bluetooth_show_battery"
              android:title="@string/bluetooth_battery_title"
              android:summary="@string/bluetooth_battery_summary"

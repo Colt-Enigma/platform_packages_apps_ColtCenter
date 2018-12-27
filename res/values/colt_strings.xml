@@ -755,4 +755,8 @@
     <string name="corners_category">Corners</string> 
     <string name="corner_radius">Rounded Corner Radius</string>
     <string name="content_padding">Corner Content Padding</string>    
+
+    <!-- Wi-Fi activity indicator -->
+    <string name="statusbar_show_wifi_activity_title">Show Wi-Fi data indicators</string>
+    <string name="statusbar_show_wifi_activity_summary">Show indicators when Wi-Fi is sending/receiving data like mobile</string>	
 </resources>
