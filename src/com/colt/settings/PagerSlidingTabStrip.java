@@ -17,7 +17,6 @@
 
 package com.colt.settings;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
@@ -80,9 +79,9 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
     private Paint mDividerPaint;
 
     private int mIndicatorColor;
-    private int mIndicatorHeight = 6;
+    private int mIndicatorHeight = 2;
 
-    private int mUnderlineHeight = 2;
+    private int mUnderlineHeight = 0;
     private int mUnderlineColor;
 
     private int mDividerWidth = 0;
@@ -107,7 +106,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
     private int mScrollOffset;
     private int mLastScrollX = 0;
 
-    private int mTabBackgroundResId = R.drawable.back_tab;
+    private int mTabBackgroundResId = R.drawable.background_tab;
 
     public PagerSlidingTabStrip(Context context) {
         this(context, null);
@@ -162,11 +161,11 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
         // get custom attrs for tabs and container
         a = context.obtainStyledAttributes(attrs, R.styleable.PagerSlidingTabStrip);
-        mIndicatorColor = context.getResources().getColor(R.color.theme_accent);
+        mIndicatorColor = a.getColor(R.styleable.PagerSlidingTabStrip_pstsIndicatorColor, mIndicatorColor);
         mIndicatorHeight = a.getDimensionPixelSize(R.styleable.PagerSlidingTabStrip_pstsIndicatorHeight, mIndicatorHeight);
-        mUnderlineColor = context.getResources().getColor(R.color.theme_accent);
+        mUnderlineColor = a.getColor(R.styleable.PagerSlidingTabStrip_pstsUnderlineColor, mUnderlineColor);
         mUnderlineHeight = a.getDimensionPixelSize(R.styleable.PagerSlidingTabStrip_pstsUnderlineHeight, mUnderlineHeight);
-        mDividerColor = context.getResources().getColor(R.color.theme_accent);
+        mDividerColor = a.getColor(R.styleable.PagerSlidingTabStrip_pstsDividerColor, mDividerColor);
         mDividerWidth = a.getDimensionPixelSize(R.styleable.PagerSlidingTabStrip_pstsDividerWidth, mDividerWidth);
         mDividerPadding = a.getDimensionPixelSize(R.styleable.PagerSlidingTabStrip_pstsDividerPadding, mDividerPadding);
         isExpandTabs = a.getBoolean(R.styleable.PagerSlidingTabStrip_pstsShouldExpand, isExpandTabs);
@@ -245,7 +244,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
     }
 
     private void addTab(final int position, CharSequence title, View tabView) {
-        TextView textView = (TextView) tabView.findViewById(R.id.psts_tab_title);
+        TextView textView = (TextView) tabView.findViewById(R.id.tab_title);
         if (textView != null) {
             if (title != null) textView.setText(title);
         }
@@ -272,9 +271,9 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
             View v = mTabsContainer.getChildAt(i);
             v.setBackgroundResource(mTabBackgroundResId);
             v.setPadding(mTabPadding, v.getPaddingTop(), mTabPadding, v.getPaddingBottom());
-            TextView tab_title = (TextView) v.findViewById(R.id.psts_tab_title);
+            TextView tab_title = (TextView) v.findViewById(R.id.tab_title);
             if (tab_title != null) {
-                tab_title.setTextColor(getResources().getColor(R.color.config_tab_text_color));
+                tab_title.setTextColor(mTabTextColor);
                 tab_title.setTypeface(mTabTextTypeface, mTabTextTypefaceStyle);
                 tab_title.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTabTextSize);
                 // setAllCaps() is only available from API 14, so the upper case is made manually if we are on a
@@ -470,7 +469,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
     private void unSelect(View tab) {
         if (tab != null) {
-            TextView tab_title = (TextView) tab.findViewById(R.id.psts_tab_title);
+            TextView tab_title = (TextView) tab.findViewById(R.id.tab_title);
             if (tab_title != null) {
                 tab_title.setSelected(false);
             }
@@ -480,7 +479,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
     private void select(View tab) {
         if (tab != null) {
-            TextView tab_title = (TextView) tab.findViewById(R.id.psts_tab_title);
+            TextView tab_title = (TextView) tab.findViewById(R.id.tab_title);
             if (tab_title != null) {
                 tab_title.setSelected(true);
             }

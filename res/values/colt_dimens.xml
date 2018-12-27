@@ -24,4 +24,11 @@
     <!-- SeekBarPreferenceCham: offset of the value popup -->
      <dimen name="seek_bar_preference_cham_value_x_offset">0dp</dimen>
      <dimen name="seek_bar_preference_cham_value_y_offset">-16dp</dimen>
+
+    <!-- colt tab elevation -->
+    <dimen name="colt_tab_elevation">5dp</dimen>
+
+    <!-- Colt tab indicator height -->
+    <dimen name="colt_tab_indicator_height">5dp</dimen>
+
 </resources>

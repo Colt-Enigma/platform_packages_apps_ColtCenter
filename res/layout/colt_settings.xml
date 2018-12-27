@@ -30,11 +30,17 @@
         android:orientation="vertical">
 
         <com.colt.settings.PagerSlidingTabStrip
-            android:id="@+id/tabs"
-            app:pstsShouldExpand="false"
-            android:layout_width="match_parent"
-            android:background="@color/config_tab_color"
-            android:layout_height="48dp" />
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:elevation="@dimen/colt_tab_elevation"
+        android:background="?android:attr/colorPrimary"
+        app:pstsTabBackground="?android:attr/selectableItemBackgroundBorderless"
+        app:pstsIndicatorHeight="@dimen/colt_tab_indicator_height"
+        app:pstsIndicatorColor="@color/colt_tab_indicator_color"
+        app:pstsUnderlineColor="@color/colt_tab_underline_color"
+        app:pstsDividerColor="@color/colt_tab_divider_color"
+        />
 
         <android.support.v4.view.ViewPager
             android:id="@+id/viewpager"

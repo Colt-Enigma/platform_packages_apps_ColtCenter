@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <color name="theme_accent">#ff009688</color>
     <color name="action_picker_fab_background">@color/theme_accent</color>
     <color name="icon_tint_color">@color/material_deep_teal_500</color>
@@ -11,4 +10,12 @@
 
     <color name="floating_action_button_touch_tint">#80ffffff</color> 
 
+    <!-- Colt tab colors -->
+    <color name="colt_tab_theme_accent">@*android:color/accent_device_default_light</color>    
+    <color name="colt_tab_indicator_color">@color/colt_tab_theme_accent</color>
+    <color name="colt_tab_underline_color">@color/colt_tab_theme_accent</color>
+    <color name="colt_tab_divider_color">@color/colt_tab_theme_accent</color>
+    <!-- Colt tab ripple (not being used, overidden from layout -->
+    <color name="background_tab_pressed_ripple">#AA000000</color>
+    
 </resources>
