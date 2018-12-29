@@ -31,11 +31,23 @@
              android:title="@string/battery_style_category_title"
              android:fragment="com.colt.settings.fragments.StatusBarBattery" />
 
+     <PreferenceCategory
+        android:key="statusbar_traffic"
+        android:title="@string/statusbar_traffic">
+
      <com.colt.settings.preferences.SystemSettingSwitchPreference
          android:key="network_traffic_state"
          android:title="@string/network_traffic_state_title"
          android:summary="@string/network_traffic_state_summary"
          android:defaultValue="false" />
+
+     <ListPreference
+            android:key="network_traffic_type"
+            android:title="@string/network_traffic_type"
+            android:entries="@array/show_network_traffic_type_entries"
+            android:entryValues="@array/show_network_traffic_type_values"
+            android:dependency="network_traffic_state"
+            android:persistent="false" />
 
      <com.colt.settings.preferences.SystemSettingSwitchPreference
         android:key="network_traffic_hidearrow"
@@ -50,6 +62,8 @@
          android:max="10"
          settings:min="0"
          settings:units="" />
+
+      </PreferenceCategory>
 
      <com.colt.settings.preferences.SystemSettingSwitchPreference
          android:key="show_fourg_icon"
