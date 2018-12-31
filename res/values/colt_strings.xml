@@ -780,4 +780,8 @@
     <string name="status_bar_logo_disabled">Disabled</string>
     <string name="status_bar_logo_style_title">Colt logo style</string>
     <string name="status_bar_logo_color_title">Select color</string>
+
+    <!-- Old Mobile Type Icons -->
+    <string name="use_old_mobiletype_title">Use old mobile type style</string>
+    <string name="use_old_mobiletype_summary">Merge signal and type icons</string>
 </resources>
