@@ -71,8 +71,6 @@ public class MiscSettings extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
         Resources res = getResources();
 
-	mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.gesture_settings_info);
-
 	mQsHeaderStyle = (ListPreference) findPreference(QS_HEADER_STYLE);
         int qsHeaderStyle = Settings.System.getInt(resolver,
                 Settings.System.QS_HEADER_STYLE, 0);
