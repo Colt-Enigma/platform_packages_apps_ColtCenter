@@ -32,7 +32,7 @@
         <com.colt.settings.PagerSlidingTabStrip
         android:id="@+id/tabs"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="50dp"
         android:elevation="@dimen/colt_tab_elevation"
         android:background="?android:attr/colorPrimary"
         app:pstsTabBackground="?android:attr/selectableItemBackgroundBorderless"
@@ -45,7 +45,8 @@
         <android.support.v4.view.ViewPager
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+	    android:layout_height="0dp"
+            android:layout_weight="1"
             tools:context=".ColtSettings"/>
     </LinearLayout>
 </RelativeLayout>

@@ -26,7 +26,7 @@
      <dimen name="seek_bar_preference_cham_value_y_offset">-16dp</dimen>
 
     <!-- colt tab elevation -->
-    <dimen name="colt_tab_elevation">5dp</dimen>
+    <dimen name="colt_tab_elevation">8dp</dimen>
 
     <!-- Colt tab indicator height -->
     <dimen name="colt_tab_indicator_height">5dp</dimen>
