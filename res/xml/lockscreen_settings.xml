@@ -31,6 +31,12 @@
 
    </PreferenceCategory>
 
+	<com.colt.settings.preferences.SystemSettingSwitchPreference
+            android:key="hide_lockscreen_status_bar"
+            android:title="@string/lockscreen_hide_status_bar_title"
+            android:summary="@string/lockscreen_hide_status_bar_summary"
+            android:defaultValue="false" />
+
     <com.colt.settings.preferences.SecureSettingSwitchPreference
         android:key="hide_lock_shortcuts"
         android:title="@string/lockscreen_hide_shortcuts_title"
