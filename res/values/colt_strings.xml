@@ -867,4 +867,8 @@
     <string name="lockscreen_clock_selection_sammy_bold">Sammy (Bold)</string>
     <string name="lockscreen_clock_selection_sammy_accent">Sammy with accent</string>
     <string name="lockscreen_clock_selection_sammy_accent_alt">Sammy with accent (Alt)</string>
+
+    <!-- Ambient visualizer -->
+    <string name="ambient_visualizer_title">Show on Ambient Display</string>
+    <string name="ambient_visualizer_summary">Shows the visualization bars also on ambient display</string>
 </resources>

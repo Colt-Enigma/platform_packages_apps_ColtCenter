@@ -18,6 +18,14 @@
     android:title="@string/lockscreen_ui_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+
+    <com.colt.settings.preferences.SecureSettingSwitchPreference
+            android:key="ambient_visualizer"
+            android:title="@string/ambient_visualizer_title"
+            android:summary="@string/ambient_visualizer_summary"
+            android:dependency="lockscreen_visualizer_enabled"
+            android:defaultValue="false" />
+
     <Preference
     	android:key="lockscreen_colors"
        	android:title="@string/lockscreen_colors"
