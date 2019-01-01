@@ -92,6 +92,13 @@
 
     </PreferenceCategory>
 
+     <!-- Toast icon switch -->
+    <com.colt.settings.preferences.SystemSettingSwitchPreference
+        android:key="toast_icon"
+        android:title="@string/toast_icon_title"
+        android:summary="@string/toast_icon_summary"
+        android:defaultValue="true" />
+
      <com.colt.settings.preferences.GlobalSettingSwitchPreference
              android:key="allow_signature_fake"
              android:title="@string/allow_signature_fake"
