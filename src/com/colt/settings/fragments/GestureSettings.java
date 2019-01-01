@@ -45,13 +45,13 @@ public class GestureSettings extends SettingsPreferenceFragment implements
 	mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.gesture_settings_info);
 
 	mSwipeTriggerLength = (SystemSettingSeekBarPreference) findPreference(KEY_SWIPE_LENGTH);
-        int triggerLength = Settings.System.getInt(resolver, Settings.System.BOTTOM_GESTURE_SWIPE_LIMIT,
+        int triggerLength = Settings.System.getInt(resolver, Settings.System.OMNI_BOTTOM_GESTURE_SWIPE_LIMIT,
                 getSwipeLengthInPixel(getResources().getInteger(com.android.internal.R.integer.nav_gesture_swipe_min_length)));
         mSwipeTriggerLength.setValue(triggerLength);
         mSwipeTriggerLength.setOnPreferenceChangeListener(this);
 
         mSwipeTriggerTimeout = (SystemSettingSeekBarPreference) findPreference(KEY_SWIPE_TIMEOUT);
-        int triggerTimeout = Settings.System.getInt(resolver, Settings.System.BOTTOM_GESTURE_TRIGGER_TIMEOUT,
+        int triggerTimeout = Settings.System.getInt(resolver, Settings.System.OMNI_BOTTOM_GESTURE_TRIGGER_TIMEOUT,
                 getResources().getInteger(com.android.internal.R.integer.nav_gesture_swipe_timout));
         mSwipeTriggerTimeout.setValue(triggerTimeout);
         mSwipeTriggerTimeout.setOnPreferenceChangeListener(this);
@@ -62,12 +62,12 @@ public class GestureSettings extends SettingsPreferenceFragment implements
         if (preference == mSwipeTriggerLength) {
 	    int value = (Integer) newValue;
             Settings.System.putInt(resolver,
-                    Settings.System.BOTTOM_GESTURE_SWIPE_LIMIT, value);
+                    Settings.System.OMNI_BOTTOM_GESTURE_SWIPE_LIMIT, value);
             return true;
         } else if (preference == mSwipeTriggerTimeout) {
             int value = (Integer) newValue;
             Settings.System.putInt(resolver,
-                    Settings.System.BOTTOM_GESTURE_TRIGGER_TIMEOUT, value);
+                    Settings.System.OMNI_BOTTOM_GESTURE_TRIGGER_TIMEOUT, value);
             return true;
         }
         return true;

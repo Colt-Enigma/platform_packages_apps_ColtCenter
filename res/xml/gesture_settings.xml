@@ -22,7 +22,7 @@
            android:summary="@string/gesture_settings_summary"
            android:defaultValue="false" />
 
-	<com.com.colt.preferences.SystemSettingSeekBarPreference
+	<com.colt.settings.preferences.SystemSettingSeekBarPreference
             android:key="gesture_swipe_length"
             android:title="@string/gesture_swipe_length_title"
             android:summary="@string/gesture_swipe_length_summary"
