@@ -45,6 +45,12 @@
          android:defaultValue="false"
          android:dependency="qs_show_brightness"/>
 
+    <com.colt.settings.preferences.SystemSettingSwitchPreference
+        android:key="lockscreen_qs_disabled"
+        android:title="@string/lockscreen_qs_disabled_title"
+        android:summary="@string/lockscreen_qs_disabled_summary"
+        android:defaultValue="false" />
+
     <ListPreference
          android:key="qs_tile_style"
          android:title="@string/qs_tile_style_title"
