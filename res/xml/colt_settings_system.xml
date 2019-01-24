@@ -26,6 +26,12 @@
              android:summary="@string/allow_signature_fake_summary"
              android:defaultValue="false" />
 
+    <Preference
+            android:key="gaming_mode"
+            android:fragment="com.colt.settings.fragments.GamingMode"
+            android:icon="@drawable/ic_gaming_mode"
+            android:title="@string/gaming_mode_title" />
+
      <Preference
          android:id="@+id/alarm_blocker"
          android:title="@string/alarm_blocker"
