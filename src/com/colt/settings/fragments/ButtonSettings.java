@@ -49,6 +49,7 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
     private static final String HWKEY_DISABLE = "hardware_keys_disable";
     private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT =
             "torch_long_press_power_timeout";
+    private static final String KEY_SWAP_NAVIGATION_KEYS = "swap_navigation_keys";
 
     // category keys
     private static final String CATEGORY_HWKEY = "hardware_keys";
@@ -75,6 +76,7 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
     private SwitchPreference mButtonBrightness_sw;
     private SwitchPreference mHwKeyDisable;
     private ListPreference mTorchLongPressPowerTimeout;
+    private SwitchPreference mSwapHardwareKeys;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -170,9 +172,12 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
         final PreferenceCategory appSwitchCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_APPSWITCH);
 
+	mSwapHardwareKeys = (SwitchPreference) findPreference(KEY_SWAP_NAVIGATION_KEYS);
+
         // back key
         if (!hasBackKey) {
             prefScreen.removePreference(backCategory);
+	    mSwapHardwareKeys.getParent().removePreference(mSwapHardwareKeys);
         }
 
         // home key
