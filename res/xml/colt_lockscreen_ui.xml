@@ -19,7 +19,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
 
-<!--    <PreferenceCategory
+    <PreferenceCategory
         android:key="lockscreen_visualizer"
         android:title="@string/lockscreen_visualizer_category" >
 
@@ -50,7 +50,7 @@
             android:dependency="lockscreen_visualizer_enabled"
             android:defaultValue="false" />
 
-    </PreferenceCategory> -->
+    </PreferenceCategory>
 
     <!-- Ambient Display -->			
        <Preference
