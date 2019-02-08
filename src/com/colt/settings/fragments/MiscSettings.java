@@ -55,6 +55,7 @@ public class MiscSettings extends SettingsPreferenceFragment implements
 	private static final String QS_HEADER_STYLE = "qs_header_style";
 	private static final String SYSUI_ROUNDED_CONTENT_PADDING = "sysui_rounded_content_padding";
 	private static final String SYSUI_ROUNDED_SIZE = "sysui_rounded_size";
+	private static final String ACTIVE_EDGE_CATEGORY = "active_edge_category";
 
 	private SystemSettingSeekBarPreference mContentPadding;
         private SystemSettingSeekBarPreference mCornerRadius;
@@ -70,6 +71,16 @@ public class MiscSettings extends SettingsPreferenceFragment implements
 	ContentResolver resolver = getActivity().getContentResolver();
         PreferenceScreen prefSet = getPreferenceScreen();
         Resources res = getResources();
+
+	Preference ActiveEdge = findPreference(ACTIVE_EDGE_CATEGORY);
+        if (!getResources().getBoolean(R.bool.has_active_edge)) {
+            getPreferenceScreen().removePreference(ActiveEdge);
+        } else {
+            if (!getContext().getPackageManager().hasSystemFeature(
+                    "android.hardware.sensor.assist")) {
+                getPreferenceScreen().removePreference(ActiveEdge);
+            }
+        }
 
 	mQsHeaderStyle = (ListPreference) findPreference(QS_HEADER_STYLE);
         int qsHeaderStyle = Settings.System.getInt(resolver,

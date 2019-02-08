@@ -917,6 +917,15 @@
     <string name="aosp_gesture_preference">AOSP Gestures</string>
     <string name="aosp_gesture_summary">Gestures Settings of AOSP</string>
 
+    <string name="active_edge_title">Active Edge</string>
+    <string name="active_edge_summary">Configure Active Edge options</string>
+
+    <!-- Active edge -->
+    <string name="active_edge_actions_title">Squeeze action</string>
+    <string name="active_edge_sensitivity_title">Squeeze sensitivity</string>
+    <string name="active_edge_wake_title">Allow when screen is off</string>
+    <string name="active_edge_wake_summary">Trigger any action even when the screen is off</string>
+
     <!-- ambient visualizer -->
     <string name="ambient_visualizer_title">Show LS Visualizer on Ambient Display</string>
     <string name="ambient_visualizer_summary">Shows the visualization bars also on ambient display (but less opaque)</string>
