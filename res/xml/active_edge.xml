@@ -31,7 +31,7 @@
         android:entryValues="@array/active_edge_actions_values"
         android:defaultValue="0" />
 
-    <com.dirtyunicorns.support.preferences.CustomSeekBarPreference
+    <com.colt.settings.preferences.CustomSeekBarPreference
         android:key="gesture_assist_sensitivity"
         android:title="@string/active_edge_sensitivity_title"
         android:max="8"
@@ -43,5 +43,8 @@
         android:title="@string/active_edge_wake_title"
         android:summary="@string/active_edge_wake_summary"
         android:defaultValue="true" />
+
+    <com.android.settingslib.widget.FooterPreference
+        android:title="@string/active_edge_footer_info" />
 
 </PreferenceScreen>

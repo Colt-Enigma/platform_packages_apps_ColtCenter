@@ -38,7 +38,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 import com.android.settings.widget.VideoPreference;
 
-import com.dirtyunicorns.support.preferences.CustomSeekBarPreference;
+import com.colt.settings.preferences.CustomSeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.List;
