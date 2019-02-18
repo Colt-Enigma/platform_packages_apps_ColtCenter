@@ -16,6 +16,12 @@
         android:title="@string/button_title"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <!-- Navigation Bar -->
+        <PreferenceScreen
+            android:key="navigationbar_settings"
+            android:title="@string/navbar_title"
+            android:fragment="com.android.settings.smartnav.NavigationBarSettings" />
+
     <Preference
         android:key="volume_key"
         android:fragment="com.colt.settings.fragments.VolumeRockerSettings"

@@ -63,7 +63,7 @@ import com.colt.settings.fragments.StatusBarSettings;
 import com.colt.settings.fragments.QuickSettings;
 import com.colt.settings.fragments.RecentsSettings;
 import com.colt.settings.fragments.ButtonSettings;
-import com.colt.settings.fragments.NavbarSettings;
+//import com.colt.settings.fragments.NavbarSettings;
 import com.colt.settings.fragments.NotificationSettings;
 import com.colt.settings.fragments.LockScreenSettings;
 import com.colt.settings.fragments.PowerMenuSettings;
@@ -138,12 +138,12 @@ public class ColtSettingsLayout extends InstrumentedFragment {
 	    frags[1] = new QuickSettings();
 	    frags[2] = new RecentsSettings();
 	    frags[3] = new ButtonSettings();
-	    frags[4] = new NavbarSettings();
-	    frags[5] = new NotificationSettings();
-	    frags[6] = new LockScreenSettings();
-            frags[7] = new PowerMenuSettings();
-	    frags[8] = new MiscSettings();
-	    frags[9] = new About();
+//	    frags[4] = new NavbarSettings();
+	    frags[4] = new NotificationSettings();
+	    frags[5] = new LockScreenSettings();
+            frags[6] = new PowerMenuSettings();
+	    frags[7] = new MiscSettings();
+	    frags[8] = new About();
         }
 
         @Override
@@ -182,7 +182,7 @@ public class ColtSettingsLayout extends InstrumentedFragment {
 	    getString(R.string.quicksettings_title),
 	    getString(R.string.recents_title),
 	    getString(R.string.button_title),
-	    getString(R.string.navbar_tuner_title),
+//	    getString(R.string.navbar_tuner_title),
             getString(R.string.notifications_title),
             getString(R.string.lockscreen_settings_title),
             getString(R.string.powermenu_title),
