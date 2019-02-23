@@ -8,7 +8,7 @@ import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.Preference; 
  
 import com.android.internal.logging.nano.MetricsProto; 
-import com.android.internal.util.hwkeys.ActionUtils; 
+import com.android.internal.utils.ActionUtils; 
 import com.android.settings.R; 
 import com.android.settings.SettingsPreferenceFragment; 
 import com.colt.settings.preferences.SecureSettingSeekBarPreference; 

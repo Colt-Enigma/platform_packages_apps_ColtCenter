@@ -34,8 +34,8 @@ import android.provider.Settings;
 import com.android.settings.R;
 
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.internal.util.hwkeys.ActionConstants;
-import com.android.internal.util.hwkeys.ActionUtils;
+import com.android.internal.utils.ActionConstants;
+import com.android.internal.utils.ActionUtils;
 
 import com.colt.settings.preferences.ActionFragment;
 import com.colt.settings.preferences.CustomSeekBarPreference;
