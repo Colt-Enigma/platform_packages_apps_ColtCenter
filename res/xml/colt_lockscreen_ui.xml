@@ -25,13 +25,6 @@
            android:title="@string/doze_display_title" 
            android:fragment="com.colt.settings.fragments.DozeFragment" />
 
-    <com.colt.settings.preferences.SecureSettingSwitchPreference
-        android:key="lockscreen_visualizer"
-        android:title="@string/lockscreen_visualizer_title"
-        android:summary="@string/lockscreen_visualizer_summary"
-        android:dependency="lockscreen_media_metadata"
-        android:defaultValue="false"/>
-
     <Preference
     	android:key="lockscreen_colors"
        	android:title="@string/lockscreen_colors"
