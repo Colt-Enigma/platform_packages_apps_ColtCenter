@@ -317,6 +317,7 @@
     <string name="qstile_inkdrop">Ink</string>
     <string name="qstile_ink">Inkdrop</string>
     <string name="qstile_teardrop">Teardrop</string>
+    <string name="qstile_circleoutline">CircleOutline</string>
 
     <!-- AOSP Recents component Style -->
     <string name="recents_component_type_title">Recents Style</string>
