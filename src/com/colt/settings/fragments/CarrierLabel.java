@@ -17,6 +17,7 @@
 package com.colt.settings.fragments;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
@@ -31,6 +32,12 @@ import android.telephony.TelephonyManager;
 import android.text.Spannable;
 import android.text.TextUtils;
 import android.widget.EditText;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import com.colt.settings.preferences.SystemSettingSwitchPreference;
+import com.colt.settings.preferences.SystemSettingSeekBarPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
@@ -41,10 +48,14 @@ public class CarrierLabel extends SettingsPreferenceFragment implements
 
     private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String KEY_STATUS_BAR_SHOW_CARRIER = "status_bar_show_carrier";
+    private static final String STATUS_BAR_CARRIER_FONT_SIZE  = "status_bar_carrier_font_size";
+    private static final String CARRIER_FONT_STYLE  = "status_bar_carrier_font_style";
 
     private PreferenceScreen mCustomCarrierLabel;
     private String mCustomCarrierLabelText;
     private ListPreference mShowCarrierLabel;
+    private SystemSettingSeekBarPreference mStatusBarCarrierSize;
+    private ListPreference mCarrierFontStyle;
 
     @Override
     public int getMetricsCategory() {
@@ -56,6 +67,7 @@ public class CarrierLabel extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
         super.onCreate(savedInstanceState);
 
+        PreferenceScreen prefSet = getPreferenceScreen();
         addPreferencesFromResource(R.xml.colt_carrier);
 
         mShowCarrierLabel = (ListPreference) findPreference(KEY_STATUS_BAR_SHOW_CARRIER);
@@ -68,6 +80,18 @@ public class CarrierLabel extends SettingsPreferenceFragment implements
         // custom carrier label
         mCustomCarrierLabel = (PreferenceScreen) findPreference(CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
+
+	mStatusBarCarrierSize = (SystemSettingSeekBarPreference) findPreference(STATUS_BAR_CARRIER_FONT_SIZE);
+        int StatusBarCarrierSize = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_CARRIER_FONT_SIZE, 14);
+        mStatusBarCarrierSize.setValue(StatusBarCarrierSize / 1);
+        mStatusBarCarrierSize.setOnPreferenceChangeListener(this);
+
+        mCarrierFontStyle = (ListPreference) findPreference(CARRIER_FONT_STYLE);
+        int showCarrierFont = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_CARRIER_FONT_STYLE, 0);
+        mCarrierFontStyle.setValue(String.valueOf(showCarrierFont));
+        mCarrierFontStyle.setOnPreferenceChangeListener(this);
 
     }
 
@@ -85,6 +109,18 @@ public class CarrierLabel extends SettingsPreferenceFragment implements
             Settings.System.putInt(resolver, Settings.System.
                     STATUS_BAR_SHOW_CARRIER, showCarrierLabel);
             mShowCarrierLabel.setSummary(mShowCarrierLabel.getEntries()[index]);
+            return true;
+        } else if (preference == mStatusBarCarrierSize) {
+            int width = ((Integer)newValue).intValue();
+            Settings.System.putInt(resolver,
+                    Settings.System.STATUS_BAR_CARRIER_FONT_SIZE, width);
+            return true;
+        } else if (preference == mCarrierFontStyle) {
+            int showCarrierFont = Integer.valueOf((String) newValue);
+            int index = mCarrierFontStyle.findIndexOfValue((String) newValue);
+            Settings.System.putInt(resolver, Settings.System.
+                STATUS_BAR_CARRIER_FONT_STYLE, showCarrierFont);
+            mCarrierFontStyle.setSummary(mCarrierFontStyle.getEntries()[index]);
             return true;
         }
         return false;
