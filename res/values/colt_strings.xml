@@ -323,6 +323,8 @@
     <string name="recents_component_type_title">Recents Style</string>
     <string name="recents_pie">Pie</string>
     <string name="recents_oreo">Oreo</string>
+    <string name="recents_grid">Grid</string>
+    <string name="recents_go">Android Go</string>
 
     <!-- Quick pull down-->
     <string name="quick_pulldown_title">Quick pulldown</string>
