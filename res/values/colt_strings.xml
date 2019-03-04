@@ -878,6 +878,7 @@
     <string name="lockscreen_clock_selection_dot">Analog (Dot)</string>
     <string name="lockscreen_clock_selection_spectrum">Analog (Spectrum)</string>
     <string name="lockscreen_clock_selection_sneeky">Analog (Sneeky)</string>
+    <string name="lockscreen_clock_selection_colt">Analog (ColtEnigma)</string>
 
      <!-- Lockscreen visualizer -->
     <string name="lockscreen_visualizer_category">Visualizer</string>
@@ -1019,7 +1020,8 @@
     <string name="pref_scrollingcache_default_disable">Default disable</string>
     <string name="pref_scrollingcache_force_disable">Force disable</string>
 
-   <string name="lockscreen_qs_disabled_title">Disable quick settings when locked</string>
+    <string name="lockscreen_qs_disabled_title">Disable quick settings when locked</string>
     <string name="lockscreen_qs_disabled_summary">Disable expanding quick settings on secure lock screens</string>
 
+    
 </resources>
