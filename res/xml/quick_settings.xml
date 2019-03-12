@@ -51,6 +51,12 @@
         android:summary="@string/lockscreen_qs_disabled_summary"
         android:defaultValue="false" />
 
+    <Preference
+         android:key="category_custom_header"
+         android:title="@string/statusbar_header_category_title"
+         android:summary="@string/statusbar_header_category_summary"
+         android:fragment="com.colt.settings.fragments.StatusbarHeader" />
+
     <ListPreference
          android:key="qs_tile_style"
          android:title="@string/qs_tile_style_title"
