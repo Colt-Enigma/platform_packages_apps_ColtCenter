@@ -20,6 +20,12 @@
          android:key="heads_up_notifications"
          android:title="@string/heads_up_notifications"
          android:fragment="com.colt.settings.fragments.HeadsUpSettings" />
+  
+    <com.colt.settings.preferences.SystemSettingSwitchPreference
+        android:key="less_boring_heads_up"
+        android:title="@string/less_boring_heads_up_title"
+        android:summary="@string/less_boring_heads_up_summary"
+        android:defaultValue="false" />
 
     <Preference
         android:key="charging_light"
