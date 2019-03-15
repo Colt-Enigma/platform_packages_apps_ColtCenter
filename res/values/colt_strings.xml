@@ -1253,4 +1253,10 @@
     <!-- One Hand mode-->
     <string name="one_hand_mode_enabled_title">One-handed mode</string>
     <string name="one_hand_mode_enabled_summary">Activate one-handed mode. Swipe left or right on stock navbar to toggle, use SmartBar actions for toggling.</string>
+
+    <!-- Ambient display music ticker -->
+    <string name="force_ambient_for_media_pref_title">Ambient music ticker</string>
+    <string name="force_ambient_for_media_pref_summary">Configure the Ambient music ticker</string>
+    <string name="ambient_ticker_footer">Ambient Music Ticker shows playing music track info within Ambient display screen.\n\nIt\'s triggered also if Ambient Display is disabled when a new track is started, forcing a clean ambient screen with track info in the middle of the screen.\n\nYou can also double tap on track info to skip track.</string>
+    <string name="force_ambient_for_media_title">Enable</string>
 </resources>
