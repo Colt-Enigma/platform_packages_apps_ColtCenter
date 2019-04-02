@@ -13,6 +13,13 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+      <!-- Ambient Display -->
+       <Preference
+           android:key="doze_fragment" 
+           android:title="@string/doze_display_title" 
+	   android:summary="@string/ambient_display_screen_summary"
+           android:fragment="com.colt.settings.fragments.DozeFragment" />
+
      <com.colt.settings.preferences.SystemSettingSwitchPreference
          android:key="lockscreen_battery_info"
          android:title="@string/lockscreen_battery_info_title"

@@ -1049,4 +1049,6 @@
     <string name="qs_footer_settings_title">Settings icon</string>
     <string name="qs_footer_settings_summary">Display Settings icon in quick settings footer</string>
 
+    <!-- Custom Ambient Display -->
+    <string name="ambient_display_screen_summary">Custom Ambient Display Configuration for ColtOS</string>
 </resources>

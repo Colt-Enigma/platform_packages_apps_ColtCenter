@@ -28,6 +28,7 @@ import android.provider.Settings;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.internal.util.colt.ColtUtils;
 
 import com.android.settings.R;
 
@@ -35,11 +36,19 @@ public class DozeFragment extends SettingsPreferenceFragment {
 
     public static final String TAG = "DozeFragment";
 
+    private static final String KEY_AMBIENT_DISPLAY_CUSTOM = "ambient_display_custom";
+
+    private Preference mCustomDoze;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.doze_settings);
+        mCustomDoze = (Preference) findPreference(KEY_AMBIENT_DISPLAY_CUSTOM);
+        if (!getResources().getBoolean(com.android.internal.R.bool.config_alt_ambient_display)) {
+            getPreferenceScreen().removePreference(mCustomDoze);
+        }
     }
 
     @Override

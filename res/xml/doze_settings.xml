@@ -12,8 +12,18 @@
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-	android:title="@string/doze_display_title"
+    android:title="@string/doze_display_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <Preference
+        android:key="ambient_display_custom"
+	android:persistent="false"
+	android:title="@string/ambient_display_screen_title"
+	android:summary="@string/ambient_display_screen_summary" >
+        <intent android:action="android.intent.action.EXTRA_SETTINGS"
+	    android:targetPackage="com.custom.ambient.display"
+            android:targetClass="com.custom.ambient.display.DozeSettings" />
+    </Preference>
 
     <com.colt.settings.preferences.SystemSettingSwitchPreference 
         android:key="ambient_battery_percent" 

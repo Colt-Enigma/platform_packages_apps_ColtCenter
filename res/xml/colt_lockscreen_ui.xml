@@ -19,12 +19,6 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
 
-    <!-- Ambient Display -->			
-       <Preference
-           android:key="doze_fragment" 
-           android:title="@string/doze_display_title" 
-           android:fragment="com.colt.settings.fragments.DozeFragment" />
-
     <Preference
     	android:key="lockscreen_colors"
        	android:title="@string/lockscreen_colors"
