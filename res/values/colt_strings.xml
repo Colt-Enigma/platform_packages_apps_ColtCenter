@@ -884,6 +884,7 @@
     <string name="lockscreen_clock_selection_dot">Analog (Dot)</string>
     <string name="lockscreen_clock_selection_spectrum">Analog (Spectrum)</string>
     <string name="lockscreen_clock_selection_sneeky">Analog (Sneeky)</string>
+    <string name="lockscreen_clock_selection_text">Text (Android Q)</string>
 
      <!-- Lockscreen visualizer -->
     <string name="lockscreen_visualizer_category">Visualizer</string>
