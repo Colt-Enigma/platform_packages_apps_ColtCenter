@@ -33,6 +33,7 @@ import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 
+import com.colt.settings.preferences.CustomSeekBarPreference;
 
 import android.provider.Settings;
 import com.android.settings.R;
@@ -42,9 +43,11 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
+    private static final String CUSTOM_TEXT_CLOCK_FONT_SIZE  = "custom_text_clock_font_size";
 
     private FingerprintManager mFingerprintManager;
     private SwitchPreference mFingerprintVib;
+    private CustomSeekBarPreference mCustomTextClockFontSize;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -65,6 +68,11 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             mFingerprintVib.setOnPreferenceChangeListener(this);
         }
 
+	// Custom Text Clock Size
+        mCustomTextClockFontSize = (CustomSeekBarPreference) findPreference(CUSTOM_TEXT_CLOCK_FONT_SIZE);
+        mCustomTextClockFontSize.setValue(Settings.System.getInt(getContentResolver(),
+                Settings.System.CUSTOM_TEXT_CLOCK_FONT_SIZE, 32));
+        mCustomTextClockFontSize.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -73,6 +81,11 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.FINGERPRINT_SUCCESS_VIB, value ? 1 : 0);
+            return true;
+        }else if (preference == mCustomTextClockFontSize) {
+            int top = (Integer) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.CUSTOM_TEXT_CLOCK_FONT_SIZE, top*1);
             return true;
         }
         return false;

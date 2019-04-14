@@ -33,6 +33,15 @@
             android:dependency="lockscreen_clock"
             android:defaultValue="0" />
 
+    <com.colt.settings.preferences.CustomSeekBarPreference
+        android:key="custom_text_clock_font_size"
+        android:title="@string/custom_text_clock_font_size_title"
+        android:max="51"
+        settings:min="30"
+        settings:units="dp"
+        android:persistent="false"
+        android:defaultValue="32" />
+
     <com.colt.settings.preferences.SystemSettingListPreference
         android:key="lockscreen_text_clock_align"
         android:title="@string/lockscreen_clock_align_title"
