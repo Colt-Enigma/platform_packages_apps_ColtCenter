@@ -21,12 +21,6 @@
      </Preference>
 
      <Preference
-         android:key="clock_settings"
-         android:title="@string/clock_options_title"
-         android:summary="@string/clock_options_summary"
-         android:fragment="com.colt.settings.fragments.ClockSettings" />
-
-     <Preference
              android:key="battery_settings"
              android:title="@string/battery_style_category_title"
              android:fragment="com.colt.settings.fragments.StatusBarBattery" />
