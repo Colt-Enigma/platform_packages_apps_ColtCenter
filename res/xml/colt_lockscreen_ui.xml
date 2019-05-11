@@ -106,7 +106,7 @@
         android:max="40"
         settings:min="10"
 	android:dependency="lockscreen_clock"
-        settings:units="sp"
+        settings:units="dp"
         android:defaultValue="16"
         android:persistent="false" />
 
@@ -115,7 +115,7 @@
         android:title="@string/lockowner_font_size_title"
         android:max="25"
         settings:min="1"
-        settings:units="sp"
+        settings:units="dp"
         android:defaultValue="21"
         android:persistent="false" />
 
