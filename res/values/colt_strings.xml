@@ -272,6 +272,8 @@
      <string name="show_network_traffic_down">Downlink</string>
      <string name="show_network_traffic_all">Uplink and Downlink</string>
      <string name="nettraf_font_size">Single Net Font size</string>
+     <string name="network_traffic_statusbar">Status bar</string>
+    <string name="network_traffic_header">Expanded header</string>
 
 <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
      <string name="show_cpu_info">Show CPU info</string>
@@ -1196,4 +1198,9 @@
     <string name="qs_set_animation_style">%1$s</string>
     <string name="qs_set_animation_duration">%1$s</string>
     <string name="qs_set_animation_interpolator">%1$s</string>
+
+    <!-- Network Traffic Location -->
+    <string name="network_traffic_location_title">Traffic indicator placement</string>
+    <string name="network_traffic_location_summary">Place indicator in either status bar or expanded header (recommended for displays with notch cutouts)</string>
+
 </resources>
