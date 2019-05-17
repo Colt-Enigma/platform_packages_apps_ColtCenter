@@ -27,4 +27,10 @@
         android:dialogTitle="@string/status_bar_battery_percentage_title"
         android:entries="@array/status_bar_battery_percentage_entries"
         android:entryValues="@array/status_bar_battery_percentage_values" />
+
+     <com.colt.settings.preferences.SystemSettingSwitchPreference
+        android:key="show_battery_estimate"
+        android:title="@string/battery_estimates_title"
+        android:summary="@string/battery_estimates_summary"
+        android:defaultValue="false" />
 </PreferenceScreen>
