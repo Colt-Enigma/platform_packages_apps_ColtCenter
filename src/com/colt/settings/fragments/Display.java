@@ -25,9 +25,10 @@ import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
+import android.content.ContentResolver;
+import android.support.v7.preference.PreferenceCategory;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-import com.android.settings.development.DevelopmentSettings;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.settings.R;
@@ -52,6 +53,12 @@ public class Display extends SettingsPreferenceFragment implements Preference.On
             prefSet.removePreference(SmartPixels);
         }
 
+    }
+
+     @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+	ContentResolver resolver = getActivity().getContentResolver();
+    return false;
     }
 
     @Override

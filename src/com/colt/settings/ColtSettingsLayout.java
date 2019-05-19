@@ -61,7 +61,7 @@ import com.colt.settings.fragments.About;
 
 import com.colt.settings.fragments.StatusBarSettings;
 import com.colt.settings.fragments.QuickSettings;
-import com.colt.settings.fragments.DisplaySettings;
+import com.colt.settings.fragments.Display;
 import com.colt.settings.fragments.RecentsSettings;
 import com.colt.settings.fragments.ButtonSettings;
 //import com.colt.settings.fragments.NavbarSettings;
@@ -137,7 +137,7 @@ public class ColtSettingsLayout extends InstrumentedFragment {
 */
 	    frags[0] = new StatusBarSettings();
 	    frags[1] = new QuickSettings();
-	    frags[2] = new DisplaySettings();
+	    frags[2] = new Display();
 	    frags[3] = new RecentsSettings();
 	    frags[4] = new ButtonSettings();
 //	    frags[4] = new NavbarSettings();
