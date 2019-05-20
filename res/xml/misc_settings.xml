@@ -81,14 +81,6 @@
         android:summary="@string/three_finger_gesture_summary" 
         android:defaultValue="false" /> 
 
-   <!-- Animations -->
-   <PreferenceScreen
-             android:key="animations_category"
-             android:title="@string/animation_settings_title"
-             android:summary="@string/animation_settings_summary"
-             android:fragment="com.colt.settings.fragments.AnimationSettings"
-             settings:allowDividerAbove="true" />
-
     <Preference
           android:key="batterybar_settings"
           android:title="@string/battery_bar_title"
