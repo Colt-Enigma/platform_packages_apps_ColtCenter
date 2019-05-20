@@ -55,9 +55,12 @@ import java.util.Collections;
 public class StatusBarSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
+    private static final String NETWORK_TRAFFIC_FONT_SIZE  = "network_traffic_font_size";
+
     private CustomSeekBarPreference mThreshold;
     private SystemSettingSwitchPreference mNetMonitor;
     private ListPreference mNetTrafficType;
+    private CustomSeekBarPreference mNetTrafficSize;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -80,7 +83,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         mNetTrafficType.setValue(String.valueOf(value));
         mNetTrafficType.setSummary(mNetTrafficType.getEntry());
         mNetTrafficType.setOnPreferenceChangeListener(this);
-        mNetTrafficType.setEnabled(isNetMonitorEnabled);
+
+	mNetTrafficSize = (CustomSeekBarPreference) findPreference(NETWORK_TRAFFIC_FONT_SIZE);
+        int NetTrafficSize = Settings.System.getInt(resolver,
+                Settings.System.NETWORK_TRAFFIC_FONT_SIZE, 15);
+        mNetTrafficSize.setValue(NetTrafficSize / 1);
+        mNetTrafficSize.setOnPreferenceChangeListener(this);
 
         value = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 0, UserHandle.USER_CURRENT);
@@ -106,6 +114,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, val,
                     UserHandle.USER_CURRENT);
+            return true;
+	}  else if (preference == mNetTrafficSize) {
+            int width = ((Integer)objValue).intValue();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NETWORK_TRAFFIC_FONT_SIZE, width);
             return true;
 	} else if (preference == mNetTrafficType) {
             int val = Integer.valueOf((String) objValue);

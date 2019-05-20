@@ -271,6 +271,7 @@
      <string name="show_network_traffic_up">Uplink</string>
      <string name="show_network_traffic_down">Downlink</string>
      <string name="show_network_traffic_all">Uplink and Downlink</string>
+     <string name="nettraf_font_size">Single Net Font size</string>
 
 <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
      <string name="show_cpu_info">Show CPU info</string>
