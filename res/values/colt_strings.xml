@@ -326,6 +326,14 @@
     <string name="qstile_ink">Inkdrop</string>
     <string name="qstile_teardrop">Teardrop</string>
     <string name="qstile_circleoutline">CircleOutline</string>
+    <string name="qstile_hexagon">Hexagon</string>
+    <string name="qstile_star">Star</string>
+    <string name="qstile_square">Rounded square</string>
+    <string name="qstile_gear">Gear</string>
+    <string name="qstile_badge">Badge</string>
+    <string name="qstile_badgetwo">Badge two</string>
+    <string name="qstile_squircle">Squircle</string>
+    <string name="qstile_diamond">Diamond</string>
 
     <!-- AOSP Recents component Style -->
     <string name="recents_component_type_title">Recents Style</string>
