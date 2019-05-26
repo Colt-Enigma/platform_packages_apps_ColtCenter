@@ -101,9 +101,9 @@
      <com.colt.settings.preferences.CustomSeekBarPreference
         android:key="network_traffic_font_size"
         android:title="@string/nettraf_font_size"
-	android:max="30"
-        settings:min="20"
-        settings:defaultValue="21"
+        android:max="21"
+        settings:min="14"
+        settings:defaultValue="15"
         settings:units="dp" />
 
      <com.colt.settings.preferences.SystemSettingSwitchPreference
