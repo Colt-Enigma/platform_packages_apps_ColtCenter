@@ -77,7 +77,6 @@
             interval="100"
             unitsLeft=""
             unitsRight="ms" />
-
     </PreferenceCategory>
 
      <PreferenceCategory
@@ -97,14 +96,6 @@
             android:entryValues="@array/show_network_traffic_type_values"
             android:dependency="network_traffic_state"
             android:persistent="false" />
-
-     <com.colt.settings.preferences.CustomSeekBarPreference
-        android:key="network_traffic_font_size"
-        android:title="@string/nettraf_font_size"
-        android:max="21"
-        settings:min="14"
-        settings:defaultValue="15"
-        settings:units="dp" />
 
      <com.colt.settings.preferences.SystemSettingSwitchPreference
         android:key="network_traffic_hidearrow"
