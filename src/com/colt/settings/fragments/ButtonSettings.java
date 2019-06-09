@@ -37,7 +37,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.utils.ActionConstants;
 import com.android.internal.utils.ActionUtils;
 
-import com.colt.settings.preferences.ActionFragment;
+import com.android.settings.smartnav.ActionFragment;
 import com.colt.settings.preferences.CustomSeekBarPreference;
 
 public class ButtonSettings extends ActionFragment implements OnPreferenceChangeListener {
