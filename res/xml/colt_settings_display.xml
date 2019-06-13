@@ -26,4 +26,9 @@
         android:title="@string/one_hand_mode_enabled_title"
         android:summary="@string/one_hand_mode_enabled_summary"
         android:defaultValue="false" />
+
+      <Preference
+            android:title="@string/app_ops_settings"
+	    android:summary="@string/app_ops_summary"
+            android:fragment="com.android.settings.applications.appops.AppOpsSummary"/>
 </PreferenceScreen> 

@@ -128,6 +128,8 @@
    <!-- Miscellaneous fragment -->
    <string name="misc_settings_title">Colt Decorators</string>
 
+   <string name="misc_title">Miscellaneous</string>
+
    <!-- Power Menu -->
     <string name="powermenu_title">Power menu</string>
     <string name="powermenu_screenshot">Screenshot</string>
@@ -1263,4 +1265,7 @@
     <!-- The volume key answer -->
     <string name="volume_answer_call_title">Volume keys answer</string>
     <string name="volume_answer_call_summary">Answer the call when volume keys pressed</string>
+
+    <!-- App Ops -->
+    <string name="app_ops_summary">Control apps operations</string>
 </resources>
