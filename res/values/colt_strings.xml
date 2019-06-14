@@ -1268,4 +1268,9 @@
 
     <!-- App Ops -->
     <string name="app_ops_summary">Control apps operations</string>
+
+    <!-- Disable InCall UI Accent -->	   
+    <string name="dialer_accent_enable_title">In-Call UI Accent</string>
+    <string name="dialer_accent_enable_summary">Enable Device Accent on InCall UI</string>
+
 </resources>
