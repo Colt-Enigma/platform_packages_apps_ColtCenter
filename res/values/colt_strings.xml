@@ -335,6 +335,11 @@
     <string name="qstile_badgetwo">Badge two</string>
     <string name="qstile_squircle">Squircle</string>
     <string name="qstile_diamond">Diamond</string>
+    <string name="qstile_neonlike">Neon like</string>
+    <string name="qstile_oos">Oxygen</string>
+    <string name="qstile_triangles">Triangles</string>
+    <string name="qstile_divided">Divided</string>
+    <string name="qstile_cosmos">Cosmos</string>
 
     <!-- AOSP Recents component Style -->
     <string name="recents_component_type_title">Recents Style</string>
