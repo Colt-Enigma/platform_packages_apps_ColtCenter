@@ -61,6 +61,7 @@ import com.colt.settings.fragments.About;
 
 import com.colt.settings.fragments.StatusBarSettings;
 import com.colt.settings.fragments.QuickSettings;
+import com.colt.settings.fragments.MiscSettings;
 import com.colt.settings.fragments.Display;
 import com.colt.settings.fragments.AnimationSettings;
 import com.colt.settings.fragments.RecentsSettings;
@@ -69,7 +70,6 @@ import com.colt.settings.fragments.ButtonSettings;
 import com.colt.settings.fragments.NotificationSettings;
 import com.colt.settings.fragments.LockScreenSettings;
 import com.colt.settings.fragments.PowerMenuSettings;
-import com.colt.settings.fragments.MiscSettings;
 import com.colt.settings.fragments.System;
 import com.colt.settings.fragments.About;
 
@@ -139,15 +139,15 @@ public class ColtSettingsLayout extends InstrumentedFragment {
 */
 	    frags[0] = new StatusBarSettings();
 	    frags[1] = new QuickSettings();
-	    frags[2] = new Display();
-	    frags[3] = new AnimationSettings();
-	    frags[4] = new RecentsSettings();
-	    frags[5] = new ButtonSettings();
+	    frags[2] = new MiscSettings();
+	    frags[3] = new Display();
+	    frags[4] = new AnimationSettings();
+	    frags[5] = new RecentsSettings();
+	    frags[6] = new ButtonSettings();
 //	    frags[4] = new NavbarSettings();
-	    frags[6] = new NotificationSettings();
-	    frags[7] = new LockScreenSettings();
-            frags[8] = new PowerMenuSettings();
-	    frags[9] = new MiscSettings();
+	    frags[7] = new NotificationSettings();
+	    frags[8] = new LockScreenSettings();
+            frags[9] = new PowerMenuSettings();
 	    frags[10] = new System();
 	    frags[11] = new About();
         }
@@ -186,6 +186,7 @@ public class ColtSettingsLayout extends InstrumentedFragment {
 */
 	    getString(R.string.statusbar_settings_title),
 	    getString(R.string.quicksettings_title),
+	    getString(R.string.misc_settings_title),
 	    getString(R.string.display_title),
 	    getString(R.string.animation_title),
 	    getString(R.string.recents_title),
@@ -194,7 +195,6 @@ public class ColtSettingsLayout extends InstrumentedFragment {
             getString(R.string.notifications_title),
             getString(R.string.lockscreen_settings_title),
             getString(R.string.powermenu_title),
-	    getString(R.string.misc_settings_title),
 	    getString(R.string.system_title),
 	    getString(R.string.about_colt)
         };
