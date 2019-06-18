@@ -70,6 +70,7 @@ import com.colt.settings.fragments.NotificationSettings;
 import com.colt.settings.fragments.LockScreenSettings;
 import com.colt.settings.fragments.PowerMenuSettings;
 import com.colt.settings.fragments.MiscSettings;
+import com.colt.settings.fragments.System;
 import com.colt.settings.fragments.About;
 
 import com.colt.settings.ca.transforms.*;
@@ -147,7 +148,8 @@ public class ColtSettingsLayout extends InstrumentedFragment {
 	    frags[7] = new LockScreenSettings();
             frags[8] = new PowerMenuSettings();
 	    frags[9] = new MiscSettings();
-	    frags[10] = new About();
+	    frags[10] = new System();
+	    frags[11] = new About();
         }
 
         @Override
@@ -193,6 +195,7 @@ public class ColtSettingsLayout extends InstrumentedFragment {
             getString(R.string.lockscreen_settings_title),
             getString(R.string.powermenu_title),
 	    getString(R.string.misc_settings_title),
+	    getString(R.string.system_title),
 	    getString(R.string.about_colt)
         };
         return titleString;

@@ -1278,4 +1278,6 @@
     <string name="dialer_accent_enable_title">In-Call UI Accent</string>
     <string name="dialer_accent_enable_summary">Enable Device Accent on InCall UI</string>
 
+    <!-- System Category -->
+    <string name="system_title">System</string>
 </resources>
