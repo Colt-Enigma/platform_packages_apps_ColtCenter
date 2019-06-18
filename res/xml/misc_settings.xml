@@ -117,34 +117,10 @@
         android:summary="@string/toast_icon_summary"
         android:defaultValue="true" />
 
-     <com.colt.settings.preferences.GlobalSettingSwitchPreference
-             android:key="allow_signature_fake"
-             android:title="@string/allow_signature_fake"
-             android:summary="@string/allow_signature_fake_summary"
-             android:defaultValue="false" />
-
      <com.colt.settings.preferences.SystemSettingSwitchPreference
          android:key="dialer_accent_enable"
          android:title="@string/dialer_accent_enable_title"
          android:summary="@string/dialer_accent_enable_summary"
          android:defaultValue="false" />
-
-     <Preference
-         android:id="@+id/alarm_blocker"
-         android:title="@string/alarm_blocker"
-         android:summary="@string/alarm_blocker_summary"
-         android:fragment="com.colt.settings.fragments.AlarmBlocker" />
-
-     <Preference
-         android:key="wakelock_blocker"
-         android:title="@string/wakelock_blocker_title"
-         android:summary="@string/wakelock_blocker_summary"
-         android:fragment="com.colt.settings.fragments.WakeLockBlocker" />
-
-     <Preference
-         android:key="suspend_actions"
-         android:title="@string/screen_state_toggles_title" 
-         android:summary="@string/screen_state_toggles_summary_opt"
-         android:fragment="com.colt.settings.fragments.SuspendActions" />
 
   </PreferenceScreen>
