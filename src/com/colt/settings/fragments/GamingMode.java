@@ -98,13 +98,13 @@ public class GamingMode extends SettingsPreferenceFragment
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.EXTENSIONS;
+        return MetricsProto.MetricsEvent.COLT;
     }
 
     @Override
     public int getDialogMetricsCategory(int dialogId) {
         if (dialogId == DIALOG_GAMING_APPS) {
-            return MetricsProto.MetricsEvent.EXTENSIONS;
+            return MetricsProto.MetricsEvent.COLT;
         }
         return 0;
     }
