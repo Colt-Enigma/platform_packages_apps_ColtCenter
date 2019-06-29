@@ -29,7 +29,7 @@
     <Preference
             android:key="gaming_mode"
             android:fragment="com.colt.settings.fragments.GamingMode"
-            android:icon="@drawable/ic_gaming_mode"
+	    android:icon="@drawable/ic_gaming"
             android:title="@string/gaming_mode_title" />
 
      <Preference
