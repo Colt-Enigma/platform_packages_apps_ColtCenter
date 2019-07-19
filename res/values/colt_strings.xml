@@ -1298,4 +1298,8 @@
     <string name="global_actions_onthego_title">On-The-Go</string>
     <string name="onthego_alpha_title">On-The-Go Alpha</string>
     <string name="onthego_alpha_summary">Alpha value of the On-The-Go overlay</string>
+
+    <!-- Pocket judge -->
+    <string name="pocket_judge_title">Pocket detection</string>
+    <string name="pocket_judge_summary">Block screen and button inputs when device is in pocket</string>
 </resources>
