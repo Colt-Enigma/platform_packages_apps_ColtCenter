@@ -1302,6 +1302,8 @@
     <!-- Pocket judge -->
     <string name="pocket_judge_title">Pocket detection</string>
     <string name="pocket_judge_summary">Block screen and button inputs when device is in pocket</string>
+    <string name="pocket_judge_fp_title">Allow FP in pocket mode</string>
+    <string name="pocket_judge_fp_summary">Listen for fingerprint when pocket detection is active</string>
 
     <!-- Lockscreen Date styles -->
     <string name="lockscreen_date_selection_title">Date style for ColtOS</string>
@@ -1316,4 +1318,5 @@
     <string name="lockscreen_date_selection_str_gradient">Gradient</string>
     <string name="lockscreen_date_selection_str_border_accent">Dark with accented borders</string>
     <string name="lockscreen_date_selection_str_border_gradient">Dark with gradient borders</string>
+
 </resources>
