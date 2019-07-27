@@ -1221,10 +1221,6 @@
     <string name="network_traffic_location_title">Traffic indicator placement</string>
     <string name="network_traffic_location_summary">Place indicator in either status bar or expanded header (recommended for displays with notch cutouts)</string>
 
-    <!-- Battery estimates -->
-    <string name="battery_estimates_title">Battery Estimates in QS</string>
-    <string name="battery_estimates_summary">Show the estimated battery life in QS panel</string>
-
     <!-- Status bar - Battery custom charging symbol -->
     <string name="text_charging_symbol_title">Custom charging symbol for text style</string>
     <string name="text_charging_symbol_summary">%1$s</string>
