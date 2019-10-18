@@ -1355,4 +1355,7 @@
     <!-- QQS brightness slider -->
     <string name="qqs_brightness_slider_title">Quick Qs Brightness slider</string>
 
+    <!-- Brightness icon-->
+    <string name="brightness_icon_title">Auto Brightness icon</string>
+    <string name="brightness_icon_summary">Show a auto brightness icon along with the brighness slider</string>
 </resources>
