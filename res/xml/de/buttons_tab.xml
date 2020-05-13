@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2017 The ABC rom
+     Copyright (C) 2018 ColtOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+	<!-- Colt Logo Header -->
+        <Preference android:key="colt_header_about" android:layout="@layout/colt_header_about"/>
+
+	<!-- Buttons -->
+	<com.colt.settings.preference.CategoryColtPreference android:key="buttonsettings_category" android:title="@string/button_title" android:summary="@string/buttonsettings_summary" android:fragment="com.colt.settings.fragments.ButtonSettings"/>
+
+	<!-- Navigation Bar -->
+	<com.colt.settings.preference.CategoryColtPreference android:key="navigationbar_category" android:title="@string/navbar_title" android:summary="@string/navbar_summary" android:fragment="com.colt.settings.fragments.NavbarSettings"/>
+
+	<!-- Power Menu -->
+	<com.colt.settings.preference.CategoryColtPreference android:key="powermenu__category" android:title="@string/powermenu_title" android:summary="@string/powermenu_summary" android:fragment="com.colt.settings.fragments.PowerMenuSettings"/>
+
+	<!-- Gestures -->
+	<com.colt.settings.preference.CategoryColtPreference android:key="gestures_category" android:title="@string/gestures_title" android:summary="@string/gesture_summary" android:fragment="com.colt.settings.fragments.GestureSettings"/>
+
+</PreferenceScreen>
