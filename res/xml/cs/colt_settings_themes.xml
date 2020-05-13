@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res/com.android.settings" android:title="@string/system_colors">
+
+    <Preference android:key="theme_select_activity" android:title="@string/theme_select_title" android:summary="@string/theme_select_summary" android:persistent="false">
+            <intent android:action="android.intent.action.MAIN" android:targetPackage="com.android.customization" android:targetClass="com.android.customization.picker.CustomizationPickerActivity"/>
+        </Preference>
+
+    <ListPreference android:key="theme_switch" android:title="@string/theme_type_title" android:summary="%s" android:dialogTitle="@string/theme_type_summary" android:entries="@array/theme_type_titles" android:entryValues="@array/theme_type_values" android:defaultValue="1"/>
+
+    <ListPreference android:key="accent_preset" android:title="@string/accent_preset_title" android:persistent="false" android:entries="@array/accent_presets_entries" android:entryValues="@array/accent_presets_values"/>    
+
+    <net.margaritov.preference.colorpicker.ColorPickerPreference android:key="accent_color" android:title="@string/accent_color" android:summary="@string/accent_summary" android:defaultValue="0x4285F4" android:persistent="false"/>
+
+</PreferenceScreen>
