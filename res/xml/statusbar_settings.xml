@@ -23,11 +23,12 @@
                 android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />
     </Preference>
 
-   <Preference
-         android:key="network_traffic"
-         android:title="@string/traffic_title"
-         android:summary="@string/traffic_summary"
-         android:fragment="com.colt.settings.fragments.NetworkTraffic" />
+    <com.colt.settings.preference.SystemSettingMasterSwitchPreference
+        android:key="network_traffic_state"
+        android:fragment="com.colt.settings.fragments.NetworkTraffic"
+        android:title="@string/network_traffic_state_title"
+        android:summary="@string/network_traffic_state_summary"
+        android:defaultValue="false" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -40,10 +41,10 @@
         android:defaultValue="false" />
 
     <com.colt.settings.preference.SystemSettingSwitchPreference
-         android:key="show_fourg_icon"
-         android:title="@string/show_fourg_icon_title"
-         android:summary="@string/show_fourg_icon_summary"
-	 android:defaultValue="false"/>
+        android:key="show_fourg_icon"
+        android:title="@string/show_fourg_icon_title"
+        android:summary="@string/show_fourg_icon_summary"
+        android:defaultValue="false"/>
 
     <SwitchPreference
         android:key="use_old_mobiletype"

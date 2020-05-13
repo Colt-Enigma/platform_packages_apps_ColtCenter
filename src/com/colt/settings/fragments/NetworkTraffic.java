@@ -1,117 +1,109 @@
+/*
+ * Copyright (C) 2020 Havoc-OS
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.colt.settings.fragments;
+
+import android.os.Bundle;
+import android.provider.Settings;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.CompoundButton;
+import android.widget.Switch;
+import android.widget.TextView;
+
+import androidx.preference.Preference;
 
 import com.android.internal.logging.nano.MetricsProto;
 
-import android.os.Bundle;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
-import android.os.UserHandle;
-import android.content.ContentResolver;
-import android.content.res.Resources;
-import androidx.preference.ListPreference;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceGroup;
-import androidx.preference.PreferenceScreen;
-import androidx.preference.PreferenceCategory;
-import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.PreferenceFragment;
-import android.provider.Settings;
 import com.android.settings.R;
-
-import java.util.Locale;
-import android.text.TextUtils;
-import android.view.View;
-
 import com.android.settings.SettingsPreferenceFragment;
-import com.colt.settings.preference.CustomSeekBarPreference;
-import com.colt.settings.preference.SystemSettingSwitchPreference;
-import com.android.settings.Utils;
-import android.util.Log;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.Collections;
+import com.colt.settings.preference.SystemSettingListPreference;
+import com.colt.settings.preference.SystemSettingSeekBarPreference;
 
 public class NetworkTraffic extends SettingsPreferenceFragment implements
-        OnPreferenceChangeListener {
+        Preference.OnPreferenceChangeListener, CompoundButton.OnCheckedChangeListener {
 
-    private static final String NETWORK_TRAFFIC_FONT_SIZE  = "network_traffic_font_size";
+    private SystemSettingListPreference mLocation;
+    private SystemSettingSeekBarPreference mThreshold;
 
-    private CustomSeekBarPreference mThreshold;
-    private SystemSettingSwitchPreference mNetMonitor;
-    private ListPreference mNetTrafficType;
-    private CustomSeekBarPreference mNetTrafficSize;
+    private TextView mTextView;
+    private View mSwitchBar;
 
     @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
-
+    public void onCreate(Bundle savedInstance) {
+        super.onCreate(savedInstance);
         addPreferencesFromResource(R.xml.network_traffic);
 
-        PreferenceScreen prefSet = getPreferenceScreen();
-        final ContentResolver resolver = getActivity().getContentResolver();
-
-        boolean isNetMonitorEnabled = Settings.System.getIntForUser(resolver,
-                Settings.System.NETWORK_TRAFFIC_STATE, 1, UserHandle.USER_CURRENT) == 1;
-        mNetMonitor = (SystemSettingSwitchPreference) findPreference("network_traffic_state");
-        mNetMonitor.setChecked(isNetMonitorEnabled);
-        mNetMonitor.setOnPreferenceChangeListener(this);
-
-        int value = Settings.System.getIntForUser(resolver,
-                Settings.System.NETWORK_TRAFFIC_TYPE, 0, UserHandle.USER_CURRENT);
-        mNetTrafficType = (ListPreference) findPreference("network_traffic_type");
-        mNetTrafficType.setValue(String.valueOf(value));
-        mNetTrafficType.setSummary(mNetTrafficType.getEntry());
-        mNetTrafficType.setOnPreferenceChangeListener(this);
-
-        mNetTrafficSize = (CustomSeekBarPreference) findPreference(NETWORK_TRAFFIC_FONT_SIZE);
-        int NetTrafficSize = Settings.System.getInt(resolver,
-                Settings.System.NETWORK_TRAFFIC_FONT_SIZE, 21);
-        mNetTrafficSize.setValue(NetTrafficSize / 1);
-        mNetTrafficSize.setOnPreferenceChangeListener(this);
-
-        value = Settings.System.getIntForUser(resolver,
-                Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 1, UserHandle.USER_CURRENT);
-        mThreshold = (CustomSeekBarPreference) findPreference("network_traffic_autohide_threshold");
-        mThreshold.setValue(value);
-        mThreshold.setOnPreferenceChangeListener(this);
-        mThreshold.setEnabled(isNetMonitorEnabled);
+        mLocation = (SystemSettingListPreference) findPreference("network_traffic_location");
+        mThreshold = (SystemSettingSeekBarPreference) findPreference("network_traffic_autohide_threshold");
     }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        final View view = LayoutInflater.from(getContext()).inflate(R.layout.master_setting_switch, container, false);
+        ((ViewGroup) view).addView(super.onCreateView(inflater, container, savedInstanceState));
+        return view;
+    }
 
-        if (preference == mNetMonitor) {
-            boolean value = (Boolean) objValue;
-            Settings.System.putIntForUser(getActivity().getContentResolver(),
-                    Settings.System.NETWORK_TRAFFIC_STATE, value ? 1 : 0,
-                    UserHandle.USER_CURRENT);
-            mNetMonitor.setChecked(value);
-            mThreshold.setEnabled(value);
-            return true;
-        } else if (preference == mThreshold) {
-            int val = (Integer) objValue;
-            Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, val,
-                    UserHandle.USER_CURRENT);
-            return true;
-        }  else if (preference == mNetTrafficSize) {
-            int width = ((Integer)objValue).intValue();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NETWORK_TRAFFIC_FONT_SIZE, width);
-            return true;
-        } else if (preference == mNetTrafficType) {
-            int val = Integer.valueOf((String) objValue);
-            Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.NETWORK_TRAFFIC_TYPE, val,
-                    UserHandle.USER_CURRENT);
-            int index = mNetTrafficType.findIndexOfValue((String) objValue);
-            mNetTrafficType.setSummary(mNetTrafficType.getEntries()[index]);
-            return true;
-        }
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        boolean enabled = Settings.System.getInt(getContentResolver(),
+                Settings.System.NETWORK_TRAFFIC_STATE, 0) == 1;
+
+        mTextView = view.findViewById(R.id.switch_text);
+        mTextView.setText(getString(enabled ?
+                R.string.switch_on_text : R.string.switch_off_text));
+
+        mSwitchBar = view.findViewById(R.id.switch_bar);
+        Switch switchWidget = mSwitchBar.findViewById(android.R.id.switch_widget);
+        switchWidget.setChecked(enabled);
+        switchWidget.setOnCheckedChangeListener(this);
+        mSwitchBar.setActivated(enabled);
+        mSwitchBar.setOnClickListener(v -> {
+            switchWidget.setChecked(!switchWidget.isChecked());
+            mSwitchBar.setActivated(switchWidget.isChecked());
+        });
+
+        mLocation.setEnabled(enabled);
+        mThreshold.setEnabled(enabled);
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+        Settings.System.putInt(getContentResolver(),
+                Settings.System.NETWORK_TRAFFIC_STATE, isChecked ? 1 : 0);
+        mTextView.setText(getString(isChecked ? R.string.switch_on_text : R.string.switch_off_text));
+        mSwitchBar.setActivated(isChecked);
+
+        mLocation.setEnabled(isChecked);
+        mThreshold.setEnabled(isChecked);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
     }
 
@@ -119,5 +111,4 @@ public class NetworkTraffic extends SettingsPreferenceFragment implements
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.COLT;
     }
-
 }
