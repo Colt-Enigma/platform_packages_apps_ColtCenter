@@ -1192,9 +1192,6 @@
     <string name="pocket_judge_title">Pocket detection</string>
     <string name="pocket_judge_summary">Block screen and button inputs when device is in pocket</string>
 
-    <!-- Translucent lockscreen notifications background -->
-    <string name="translucent_lockscreen_notifications_bg_title">Translucent notifications background</string>
-
     <!-- Tiles animation style -->
     <string name="qs_tiles">QS Tiles</string>
     <string name="qs_tile_animation_style_title">Animation style</string>
