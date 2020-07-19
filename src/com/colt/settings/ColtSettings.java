@@ -17,6 +17,7 @@
 package com.colt.settings;
 
 import android.os.Bundle;
+import android.content.Context;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.ListPreference;
 import androidx.preference.SwitchPreference;
@@ -28,6 +29,8 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager.widget.PagerAdapter;
 
+import android.util.TypedValue;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -141,5 +144,10 @@ public class ColtSettings extends SettingsPreferenceFragment {
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.COLT;
     }
-}
 
+    public static int getThemeAccentColor (final Context context) {
+        final TypedValue value = new TypedValue ();
+        context.getTheme ().resolveAttribute (android.R.attr.colorAccent, value, true);
+        return value.data;
+    }
+}
