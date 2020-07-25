@@ -1346,4 +1346,9 @@
     <!-- Rotation button -->
     <string name="show_rotation_button_title">Rotation button</string>
     <string name="show_rotation_button_summary">Display rotation button on navigation bar when available</string>
+
+    <!-- QS Brightness Slider position -->
+    <string name="qs_brightness_slider_hide">Hide</string>
+    <string name="qs_brightness_slider_top">Top</string>
+    <string name="qs_brightness_slider_bottom">Bottom</string>
 </resources>
