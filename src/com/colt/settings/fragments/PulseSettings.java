@@ -38,7 +38,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference;;
+import net.margaritov.preference.colorpicker.SecureSettingColorPickerPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,12 +47,12 @@ import java.util.List;
 public class PulseSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
     private static final String TAG = PulseSettings.class.getSimpleName();
-    private static final String PULSE_COLOR_MODE_KEY = "navbar_pulse_color_type";
-    private static final String PULSE_COLOR_MODE_CHOOSER_KEY = "navbar_pulse_color_user";
-    private static final String PULSE_COLOR_MODE_LAVA_SPEED_KEY = "navbar_pulse_lavalamp_speed";
+    private static final String PULSE_COLOR_MODE_KEY = "pulse_color_mode";
+    private static final String PULSE_COLOR_MODE_CHOOSER_KEY = "pulse_color_user";
+    private static final String PULSE_COLOR_MODE_LAVA_SPEED_KEY = "pulse_lavalamp_speed";
     private static final String PULSE_RENDER_CATEGORY_SOLID = "pulse_2";
     private static final String PULSE_RENDER_CATEGORY_FADING = "pulse_fading_bars_category";
-    private static final String PULSE_RENDER_MODE_KEY = "navbar_pulse_render_style";
+    private static final String PULSE_RENDER_MODE_KEY = "pulse_render_style";
     private static final int RENDER_STYLE_FADING_BARS = 0;
     private static final int RENDER_STYLE_SOLID_LINES = 1;
     private static final int COLOR_TYPE_ACCENT = 0;
@@ -62,7 +62,7 @@ public class PulseSettings extends SettingsPreferenceFragment implements
 
     private Preference mRenderMode;
     private ListPreference mColorModePref;
-    private ColorPickerPreference mColorPickerPref;
+    private ColorPickerSecurePreference mColorPickerPref;
     private Preference mLavaSpeedPref;
 
     @Override
@@ -74,21 +74,20 @@ public class PulseSettings extends SettingsPreferenceFragment implements
                 .setTitle(R.string.pulse_help_policy_notice_summary);
 
         mColorModePref = (ListPreference) findPreference(PULSE_COLOR_MODE_KEY);
-        mColorPickerPref = (ColorPickerPreference) findPreference(PULSE_COLOR_MODE_CHOOSER_KEY);
-        int userColor = Settings.System.getInt(getContentResolver(),
-                Settings.System.PULSE_COLOR_USER, 0xffffffff);
-        mColorPickerPref.setNewPreviewColor(userColor);
+        mColorPickerPref = (ColorPickerSecurePreference) findPreference(PULSE_COLOR_MODE_CHOOSER_KEY);
+        int userColor = Settings.Secure.getInt(getContentResolver(),
+                Settings.Secure.PULSE_COLOR_USER, 0xffffffff);
         mColorPickerPref.setOnPreferenceChangeListener(this);
         mLavaSpeedPref = findPreference(PULSE_COLOR_MODE_LAVA_SPEED_KEY);
         mColorModePref.setOnPreferenceChangeListener(this);
-        int colorMode = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.PULSE_COLOR_TYPE, COLOR_TYPE_ACCENT, UserHandle.USER_CURRENT);
+        int colorMode = Settings.Secure.getIntForUser(getContentResolver(),
+                Settings.Secure.PULSE_COLOR_MODE, COLOR_TYPE_ACCENT, UserHandle.USER_CURRENT);
         updateColorPrefs(colorMode);
 
         mRenderMode = findPreference(PULSE_RENDER_MODE_KEY);
         mRenderMode.setOnPreferenceChangeListener(this);
-        int renderMode = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.PULSE_RENDER_STYLE_URI, 0, UserHandle.USER_CURRENT);
+        int renderMode = Settings.Secure.getIntForUser(getContentResolver(),
+                Settings.Secure.PULSE_RENDER_STYLE, RENDER_STYLE_FADING_BARS, UserHandle.USER_CURRENT);
         updateRenderCategories(renderMode);
     }
 
@@ -96,8 +95,8 @@ public class PulseSettings extends SettingsPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference.equals(mColorPickerPref)) {
             int value = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.PULSE_COLOR_USER, value);
+            Settings.Secure.putInt(getContentResolver(),
+                    Settings.Secure.PULSE_COLOR_USER, value);
             return true;
         } else if (preference.equals(mColorModePref)) {
             updateColorPrefs(Integer.valueOf(String.valueOf(newValue)));
