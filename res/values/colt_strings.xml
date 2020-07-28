@@ -1358,4 +1358,8 @@
     <!-- Brightness icon-->
     <string name="brightness_icon_title">Auto Brightness icon</string>
     <string name="brightness_icon_summary">Show a auto brightness icon along with the brighness slider</string>
+
+    <!-- Brightness buttons -->
+    <string name="qs_show_brightness_buttons_title">Brightness control buttons</string>
+    <string name="qs_show_brightness_buttons_summary">Show buttons beside the brightness slider to adjust brightness</string>
 </resources>

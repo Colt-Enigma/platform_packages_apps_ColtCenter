@@ -183,12 +183,19 @@
             android:summary="%s"
             android:defaultValue="2" />
 
-    <com.colt.settings.preference.SystemSettingSwitchPreference
+    <com.colt.settings.preference.SecureSettingSwitchPreference
             android:key="qs_show_auto_brightness"
             android:title="@string/brightness_icon_title"
             android:summary="@string/brightness_icon_summary"
             android:dependency="qs_show_brightness_slider"
             android:defaultValue="false"/>
+
+    <com.colt.settings.preference.SecureSettingSwitchPreference
+            android:key="qs_show_brightness_buttons"
+            android:title="@string/qs_show_brightness_buttons_title"
+            android:summary="@string/qs_show_brightness_buttons_summary"
+            android:dependency="qs_show_brightness_slider"
+            android:defaultValue="true" />
 
     <com.colt.settings.preference.SecureSettingSwitchPreference
         android:key="quick_settings_vibrate"
