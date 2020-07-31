@@ -92,11 +92,11 @@
             android:summary="@string/qs_footer_settings_summary"
             android:defaultValue="true" />
 
-    <com.colt.settings.preference.SystemSettingSwitchPreference
+<!--    <com.colt.settings.preference.SystemSettingSwitchPreference
             android:key="qs_footer_show_user"
             android:title="@string/qs_footer_user_title"
             android:summary="@string/qs_footer_user_summary"
-            android:defaultValue="true" />
+            android:defaultValue="true" /> -->
 
     <com.colt.settings.preference.SystemSettingSwitchPreference
             android:key="setting_button_toggle"
