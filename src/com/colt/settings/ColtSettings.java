@@ -16,16 +16,20 @@
 
 package com.colt.settings;
 
+import android.app.ActionBar;
+import android.content.Context;
+import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.ListPreference;
 import androidx.preference.SwitchPreference;
 import androidx.preference.Preference;
 
+import android.util.TypedValue;
+import android.view.KeyEvent;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.PagerAdapter;
 
 import android.view.LayoutInflater;
@@ -38,14 +42,14 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.colt.settings.customtab.IconTitleIndicator;
-import com.colt.settings.customtab.Indicatorable;
+import github.com.st235.lib_expandablebottombar.ExpandableBottomBar;
+import github.com.st235.lib_expandablebottombar.ExpandableBottomBarMenuItem;
+
 import com.colt.settings.tabs.Statusbar;
 import com.colt.settings.tabs.Buttons;
 import com.colt.settings.tabs.Lockscreen;
 import com.colt.settings.tabs.System;
 import com.colt.settings.fragments.AboutTeam;
-
 
 import com.android.internal.logging.nano.MetricsProto;
 
@@ -56,89 +60,142 @@ public class ColtSettings extends SettingsPreferenceFragment {
 
     private static final String TAG = "ColtSettings";
 
-    private IconTitleIndicator mIndicator;
-    private ViewPager mViewpager;
+    Context mContext;
+    View view;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.colt, container, false);
+    super.onCreate(savedInstanceState);
 
-        mIndicator = (IconTitleIndicator) view.findViewById(R.id.tabs);
-        mViewpager = (ViewPager) view.findViewById(R.id.viewpager);
-        mViewpager.setAdapter(new MyAdapter(getFragmentManager()));
-        init1();
+        mContext = getActivity();
+        Resources res = getResources();
 
-	setHasOptionsMenu(true);
-		return view;
+    view = inflater.inflate(R.layout.colt, container, false);
+
+    ActionBar actionBar = getActivity().getActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle(R.string.coltos_title);
+        }
+
+    ExpandableBottomBar bottomBar = view.findViewById(R.id.expandable_bottom_bar);
+
+	Fragment statusbar = new Statusbar();
+        Fragment buttons = new Buttons();
+        Fragment lockscreen = new Lockscreen();
+        Fragment system = new System();
+	Fragment aboutteam = new AboutTeam();
+
+	Fragment fragment = (Fragment) getFragmentManager().findFragmentById(R.id.fragmentContainer);
+        if (fragment == null) {
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragmentContainer, system);
+            transaction.addToBackStack(null);
+            transaction.commit();
+        }
+
+	bottomBar.addItems(mContext.getResources().getBoolean(
+                R.bool.has_active_edge) ? new ExpandableBottomBarMenuItem.Builder(mContext)
+                .addItem(R.id.statusbar,
+                        R.drawable.statusbar_tab,
+                        R.string.status_bar_tab, getThemeAccentColor(mContext))
+                .addItem(R.id.buttons,
+                        R.drawable.buttons_tab,
+                        R.string.button_title, getThemeAccentColor(mContext))
+                .addItem(R.id.lockscreen,
+                        R.drawable.lockscreen_tab,
+                        R.string.lockscreen_tab, getThemeAccentColor(mContext))
+                .addItem(R.id.system,
+                        R.drawable.system_tab,
+                        R.string.system_tab, getThemeAccentColor(mContext))
+		.addItem(R.id.aboutteam,
+                        R.drawable.about_tab,
+                        R.string.about_tab, getThemeAccentColor(mContext))
+                .build() : new ExpandableBottomBarMenuItem.Builder(mContext)
+		.addItem(R.id.statusbar,
+                        R.drawable.statusbar_tab,
+                        R.string.status_bar_tab, getThemeAccentColor(mContext))
+                .addItem(R.id.buttons,
+                        R.drawable.buttons_tab,
+                        R.string.button_title, getThemeAccentColor(mContext))
+                .addItem(R.id.lockscreen,
+                        R.drawable.lockscreen_tab,
+                        R.string.lockscreen_tab, getThemeAccentColor(mContext))
+                .addItem(R.id.system,
+                        R.drawable.system_tab,
+                        R.string.system_tab, getThemeAccentColor(mContext))
+                .addItem(R.id.aboutteam,
+                        R.drawable.about_tab,
+                        R.string.about_tab, getThemeAccentColor(mContext))
+                .build()
+        );
+
+	bottomBar.setOnItemSelectedListener((view, menuItem) -> {
+            int id = menuItem.getItemId();
+            switch (id){
+                case R.id.statusbar:
+                    launchFragment(statusbar);
+                    break;
+                case R.id.buttons:
+                    launchFragment(buttons);
+                    break;
+                case R.id.lockscreen:
+                    launchFragment(lockscreen);
+                    break;
+                case R.id.system:
+                        launchFragment(system);
+                    break;
+		case R.id.aboutteam:
+                        launchFragment(aboutteam);
+                    break;
+            }
+            return null;
+        });
+
+        setHasOptionsMenu(true);
+
+	return view;
+    }
+
+    @Override
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+    }
+
+    private void launchFragment(Fragment fragment) {
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragmentContainer, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
     }
 
-    private void init1() {
-        mIndicator.setTextSize(11);
-        mIndicator.setTextColorResId(R.color.selector_tab);
-        mIndicator.setIconWidthHeight(50);
-        mIndicator.setItemPaddingTop(15);
-        mIndicator.setViewPager(mViewpager);
-    }
-
-    class MyAdapter extends FragmentPagerAdapter implements Indicatorable.IconPageAdapter {
-        String titles[] = getTitles();
-        private Fragment frags[] = new Fragment[titles.length];
-
-        public MyAdapter(FragmentManager fm) {
-            super(fm);
-	    frags[0] = new Statusbar();
-            frags[1] = new Buttons();
-            frags[2] = new Lockscreen();
-            frags[3] = new System();
-            frags[4] = new AboutTeam();
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return titles[position];
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return frags[position];
-        }
-
-        @Override
-        public int getCount() {
-            return frags.length;
-        }
-
-        public int getIconResId(int position) {
-            return icons[position];
-        }
-
-    }
-
-    private String[] getTitles() {
-        String titleString[];
-        titleString = new String[]{
-            getString(R.string.status_bar_tab),
-            getString(R.string.button_title),
-	    getString(R.string.lockscreen_tab),
-            getString(R.string.system_tab),
-            getString(R.string.about_tab)};
-        return titleString;
-    }
-
-    private int icons[] = {
-	    R.drawable.statusbar_tab,
-            R.drawable.buttons_tab,
-            R.drawable.lockscreen_tab,
-            R.drawable.system_tab,
-            R.drawable.about_tab};
-
     @Override
-    public int getMetricsCategory() {
+    public void onResume() {
+        super.onResume();
+
+        view = getView();
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        view.setOnKeyListener((v, keyCode, event) -> {
+            if (event.getAction() == KeyEvent.ACTION_UP &&
+                    keyCode == KeyEvent.KEYCODE_BACK) {
+                getActivity().finish();
+                return true;
+            }
+            return false;
+        });
+    }
+
+    public static int getThemeAccentColor (final Context context) {
+        final TypedValue value = new TypedValue ();
+        context.getTheme ().resolveAttribute (android.R.attr.colorAccent, value, true);
+        return value.data;
+    }
+
+    @Override public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.COLT;
     }
 }

@@ -18,20 +18,21 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewpager"
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/tabs"/>
+	android:layout_height="match_parent"
+        android:layout_above="@+id/expandable_bottom_bar"/>
 
-    <com.colt.settings.customtab.IconTitleIndicator
-        android:id="@+id/tabs"
+    <github.com.st235.lib_expandablebottombar.ExpandableBottomBar
+        android:id="@+id/expandable_bottom_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:translationY="5dp"
-        android:background="@color/dialog_background" />
+	app:exb_backgroundColor="@color/dialog_background"
+        app:exb_itemInactiveColor="?android:attr/textColorPrimary"
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

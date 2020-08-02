@@ -45,6 +45,11 @@ public class Statusbar extends SettingsPreferenceFragment implements
 
    }
 
+  @Override
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+
+    }
+
  @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
 
@@ -52,7 +57,7 @@ public class Statusbar extends SettingsPreferenceFragment implements
     }
 
 
-@Override
+ @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.COLT;
     }

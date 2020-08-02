@@ -17,6 +17,7 @@
 
   <!-- Categories -->
   <string name="colt_interface">The PandoraBox</string>
+  <string name="coltos_title">Magic of ColtOS</string>
   <string name="status_bar_icons_category_title">Icons</string>
   <string name="various_toggles">Various Toggles</string>
   <string name="status_bar_carrier_title">Carrier Label</string>
@@ -55,6 +56,9 @@
   <string name="lockscreen_tab">Lockscreen</string>
   <string name="buttons_tab">Buttons</string>
   <string name="about_tab">About</string>
+
+  <string name="accessibility_description">Screen menu</string>
+  <string name="accessibility_item_description">%1$s menu item</string>
 
   <!-- Colt Settings -->
   <string name="quicksettings_title">Quick Settings</string>

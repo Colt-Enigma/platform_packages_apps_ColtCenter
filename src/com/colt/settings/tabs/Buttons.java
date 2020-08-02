@@ -54,6 +54,11 @@ public class Buttons extends SettingsPreferenceFragment implements
     }
 
     @Override
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+
+    }
+
+    @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.COLT;
     }

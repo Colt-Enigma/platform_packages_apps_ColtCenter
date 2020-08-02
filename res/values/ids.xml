@@ -1,0 +1,10 @@
+<resources>
+
+    <!-- ColtOS tabs id -->
+    <item name="statusbar" type="id" />
+    <item name="buttons" type="id" />
+    <item name="lockscreen" type="id" />
+    <item name="system" type="id" />
+    <item name="aboutteam" type="id" />
+
+</resources>

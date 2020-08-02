@@ -33,11 +33,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.settings.R;
-import com.android.settings.Utils;
 
 public class CategoryColtPreference extends Preference {
 
-    private final View.OnClickListener mClickListener = v -> performClick(v);
+    private final View.OnClickListener mClickListener = this::performClick;
 
     private boolean mAllowDividerAbove;
     private boolean mAllowDividerBelow;
@@ -56,10 +55,6 @@ public class CategoryColtPreference extends Preference {
         setLayoutResource(R.layout.category_colt_preference);
     }
 
-    public CategoryColtPreference(Context context, View view) {
-        super(context);
-    }
-
     @Override
     public void onBindViewHolder(PreferenceViewHolder holder) {
         super.onBindViewHolder(holder);
@@ -72,4 +67,4 @@ public class CategoryColtPreference extends Preference {
         holder.setDividerAllowedBelow(mAllowDividerBelow);
     }
 
-} 
+}
