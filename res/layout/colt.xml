@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 	app:exb_elevation="8dp"
-	app:exb_backgroundColor="@color/dialog_background"	
+	app:exb_backgroundColor="@color/colt_bottomnavbar_color"	
         app:exb_itemInactiveColor="?android:attr/textColorPrimary"
 	app:layout_behavior="github.com.st235.lib_expandablebottombar.behavior.ExpandableBottomBarScrollableBehavior"
         android:layout_alignParentBottom="true" />

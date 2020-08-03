@@ -55,6 +55,8 @@ import com.android.internal.logging.nano.MetricsProto;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.colt.settings.utils.Utils;
+import java.util.Random;
+import android.graphics.Color;
 
 public class ColtSettings extends SettingsPreferenceFragment {
 
@@ -62,6 +64,7 @@ public class ColtSettings extends SettingsPreferenceFragment {
 
     Context mContext;
     View view;
+    private int mRandomColor;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -89,7 +92,7 @@ public class ColtSettings extends SettingsPreferenceFragment {
 	Fragment fragment = (Fragment) getFragmentManager().findFragmentById(R.id.fragmentContainer);
         if (fragment == null) {
             FragmentTransaction transaction = getFragmentManager().beginTransaction();
-            transaction.replace(R.id.fragmentContainer, system);
+            transaction.replace(R.id.fragmentContainer, statusbar);
             transaction.addToBackStack(null);
             transaction.commit();
         }
@@ -98,35 +101,35 @@ public class ColtSettings extends SettingsPreferenceFragment {
                 R.bool.has_active_edge) ? new ExpandableBottomBarMenuItem.Builder(mContext)
                 .addItem(R.id.statusbar,
                         R.drawable.statusbar_tab,
-                        R.string.status_bar_tab, getThemeAccentColor(mContext))
+                        R.string.status_bar_tab, getRandomColor())
                 .addItem(R.id.buttons,
                         R.drawable.buttons_tab,
-                        R.string.button_title, getThemeAccentColor(mContext))
+                        R.string.button_title, getRandomColor())
                 .addItem(R.id.lockscreen,
                         R.drawable.lockscreen_tab,
-                        R.string.lockscreen_tab, getThemeAccentColor(mContext))
+                        R.string.lockscreen_tab, getRandomColor())
                 .addItem(R.id.system,
                         R.drawable.system_tab,
-                        R.string.system_tab, getThemeAccentColor(mContext))
+                        R.string.system_tab, getRandomColor())
 		.addItem(R.id.aboutteam,
                         R.drawable.about_tab,
-                        R.string.about_tab, getThemeAccentColor(mContext))
+                        R.string.about_tab, getRandomColor())
                 .build() : new ExpandableBottomBarMenuItem.Builder(mContext)
 		.addItem(R.id.statusbar,
                         R.drawable.statusbar_tab,
-                        R.string.status_bar_tab, getThemeAccentColor(mContext))
+                        R.string.status_bar_tab, getRandomColor())
                 .addItem(R.id.buttons,
                         R.drawable.buttons_tab,
-                        R.string.button_title, getThemeAccentColor(mContext))
+                        R.string.button_title, getRandomColor())
                 .addItem(R.id.lockscreen,
                         R.drawable.lockscreen_tab,
-                        R.string.lockscreen_tab, getThemeAccentColor(mContext))
+                        R.string.lockscreen_tab, getRandomColor())
                 .addItem(R.id.system,
                         R.drawable.system_tab,
-                        R.string.system_tab, getThemeAccentColor(mContext))
+                        R.string.system_tab, getRandomColor())
                 .addItem(R.id.aboutteam,
                         R.drawable.about_tab,
-                        R.string.about_tab, getThemeAccentColor(mContext))
+                        R.string.about_tab, getRandomColor())
                 .build()
         );
 
@@ -175,6 +178,7 @@ public class ColtSettings extends SettingsPreferenceFragment {
     @Override
     public void onResume() {
         super.onResume();
+	getRandomColor();
 
         view = getView();
         view.setFocusableInTouchMode(true);
@@ -189,10 +193,9 @@ public class ColtSettings extends SettingsPreferenceFragment {
         });
     }
 
-    public static int getThemeAccentColor (final Context context) {
-        final TypedValue value = new TypedValue ();
-        context.getTheme ().resolveAttribute (android.R.attr.colorAccent, value, true);
-        return value.data;
+    public int getRandomColor(){
+       Random rnd = new Random();
+       return Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
     }
 
     @Override public int getMetricsCategory() {

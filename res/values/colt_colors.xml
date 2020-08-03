@@ -18,6 +18,7 @@
     <color name="BottomBarBackgroundColor">@*android:color/BottomBarBackground</color>
     <color name="bottom_nav_text_icon_active">@*android:color/accent_device_default_light</color>
     <color name="bottom_nav_text_icon_inactive">#9c9c9c</color>
+    <color name="colt_bottomnavbar_color">@*android:color/notification_material_background_color</color>
 
     <!-- FOD icon picker-->
     <color name="fod_item_background_stroke_color">#d6d6d6</color>
