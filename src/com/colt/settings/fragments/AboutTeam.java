@@ -295,5 +295,17 @@ public class AboutTeam extends SettingsPreferenceFragment {
                         )
                 )
         );
+        list.add(new AboutTeamAdapter.Maintainer(
+                        "Xiaomi Redmi 5 Plus / Note 5 (Vince)",
+                        new AboutTeamAdapter.Dev(
+                                "Alexandru Scurtu",
+                                "",
+                                "https://avatars3.githubusercontent.com/sashascurtu",
+                                "https://forum.xda-developers.com/redmi-note-5/development/rom-coltos-redmi-5-plus-note-5-t4133341",
+                                "https://github.com/sashascurtu",
+                                ""
+                        )
+                )
+        );
     }
 }
