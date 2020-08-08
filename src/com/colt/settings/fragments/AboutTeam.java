@@ -295,5 +295,29 @@ public class AboutTeam extends SettingsPreferenceFragment {
                         )
                 )
         );
+	list.add(new AboutTeamAdapter.Maintainer(
+                        "Xiaomi Redmi Note 3 Pro (Kenzo/Kate)",
+                        new AboutTeamAdapter.Dev(
+                                "Gigabyte",
+                                "",
+                                "https://avatars3.githubusercontent.com/gigabyte-1000",
+                                "https://forum.xda-developers.com/showthread.php?t=4090359",
+                                "https://github.com/gigabyte-1000",
+                                ""
+                        )
+                )
+        );		
+	list.add(new AboutTeamAdapter.Maintainer(
+                        "Samsung Galaxy Tab Pro 8.4 (mondrianwifi)",
+                        new AboutTeamAdapter.Dev(
+                                "Gigabyte",
+                                "",
+                                "https://avatars3.githubusercontent.com/gigabyte-1000",
+                                "https://forum.xda-developers.com/showthread.php?t=4090429",
+                                "https://github.com/gigabyte-1000",
+                                ""
+                        )
+                )
+        );			
     }
 }
