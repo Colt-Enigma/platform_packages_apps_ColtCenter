@@ -236,13 +236,13 @@ public class AboutTeam extends SettingsPreferenceFragment {
                 )
         );
 	list.add(new AboutTeamAdapter.Maintainer(
-                        "Xiaomi Redmi 4X (Santoni)",
+                        "Xiaomi Redmi 5 Plus / Note 5 (Vince)",
                         new AboutTeamAdapter.Dev(
-                                "Aman Dwivedi",
+                                "Alexandru Scurtu",
                                 "",
-                                "https://avatars3.githubusercontent.com/amandwivedi0",
-                                "https://forum.xda-developers.com/xiaomi-redmi-4x/development/rom-coltos-5-6-t4049845",
-                                "https://github.com/amandwivedi0",
+                                "https://avatars3.githubusercontent.com/sashascurtu",
+                                "https://forum.xda-developers.com/redmi-note-5/development/rom-coltos-redmi-5-plus-note-5-t4133341",
+                                "https://github.com/sashascurtu",
                                 ""
                         )
                 )
