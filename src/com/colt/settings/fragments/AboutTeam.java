@@ -236,18 +236,6 @@ public class AboutTeam extends SettingsPreferenceFragment {
                 )
         );
 	list.add(new AboutTeamAdapter.Maintainer(
-                        "Xiaomi Redmi 4X (Santoni)",
-                        new AboutTeamAdapter.Dev(
-                                "Aman Dwivedi",
-                                "",
-                                "https://avatars3.githubusercontent.com/amandwivedi0",
-                                "https://forum.xda-developers.com/xiaomi-redmi-4x/development/rom-coltos-5-6-t4049845",
-                                "https://github.com/amandwivedi0",
-                                ""
-                        )
-                )
-        );
-	list.add(new AboutTeamAdapter.Maintainer(
                         "Xiaomi Redmi Note 4/X (Mido)",
                         new AboutTeamAdapter.Dev(
                                 "Sagar Rokade",
