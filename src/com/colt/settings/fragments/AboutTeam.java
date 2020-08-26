@@ -89,19 +89,43 @@ public class AboutTeam extends SettingsPreferenceFragment {
         List<AboutTeamAdapter.Dev> team = new ArrayList<>();
         team.add(new AboutTeamAdapter.Dev(
                 "Rakesh Batra",
-                "Founder | Core Developer",
+                "Founder | Lead Developer",
                 "https://avatars3.githubusercontent.com/rakeshbatra",
                 "https://forum.xda-developers.com/member.php?u=5985430",
                 "https://github.com/rakeshbatra",
                 "https://t.me/RakeshBatra"
         ));
 	team.add(new AboutTeamAdapter.Dev(
+                "Mrinal Ghosh",
+                "Core Developer",
+                "https://avatars3.githubusercontent.com/mg712702",
+                "https://forum.xda-developers.com/member.php?u=7813190",
+                "https://github.com/mg712702",
+                "https://t.me/mg712702"
+        ));
+	team.add(new AboutTeamAdapter.Dev(
                 "Nitinkumar Chobhe",
-                "Colt Developer",
+                "Core Team",
                 "https://avatars3.githubusercontent.com/nitin1438",
                 "https://forum.xda-developers.com/member.php?u=5044214",
                 "https://github.com/nitin1438",
                 "https://t.me/nitin1438"
+        ));
+        team.add(new AboutTeamAdapter.Dev(
+                "Sujit Roy",
+                "Core Team",
+                "https://avatars3.githubusercontent.com/sujitroy",
+                "https://forum.xda-developers.com/member.php?u=7598073",
+                "https://github.com/sujitroy",
+                "https://t.me/sujitroy"
+        ));
+	team.add(new AboutTeamAdapter.Dev(
+                "Saurabh Charde",
+                "Core Team",
+                "https://avatars3.githubusercontent.com/saurabhchardereal",
+                "https://forum.xda-developers.com/member.php?u=6626122",
+                "https://github.com/saurabhchardereal",
+                "https://t.me/SaurabhCharde"
         ));
         team.add(new AboutTeamAdapter.Dev(
                 "Roger T",
@@ -110,14 +134,6 @@ public class AboutTeam extends SettingsPreferenceFragment {
                 "",
                 "https://github.com/ROGERDOTT",
                 "https://t.me/Roger_T"
-        ));
-	team.add(new AboutTeamAdapter.Dev(
-                "Mady51",
-                "Kernel Developer",
-                "https://avatars3.githubusercontent.com/mady51",
-                "https://forum.xda-developers.com/member.php?u=7072514",
-                "",
-                "https://t.me/Mady51"
         ));
         list.add(new AboutTeamAdapter.Team(
                         "https://github.com/Colt-Enigma",
@@ -128,13 +144,25 @@ public class AboutTeam extends SettingsPreferenceFragment {
         );
         list.add(new AboutTeamAdapter.Header());
         list.add(new AboutTeamAdapter.Maintainer(
-                        "OnePlus 3/3T",
+                        "Asus ZenFone Max Pro M1 (X00T/D)",
                         new AboutTeamAdapter.Dev(
-                                "Rakesh Batra",
+                                "Saurabh Charde",
                                 "",
-                                "https://avatars3.githubusercontent.com/rakeshbatra",
-                                "https://forum.xda-developers.com/oneplus-3/oneplus-3--3t-cross-device-development/rom-coltos-t3808635",
-                                "https://github.com/rakeshbatra",
+                                "https://avatars3.githubusercontent.com/saurabhchardereal",
+                                "https://forum.xda-developers.com/showthread.php?t=4004943",
+                                "https://github.com/saurabhchardereal",
+                                ""
+                        )
+                )
+        );
+	list.add(new AboutTeamAdapter.Maintainer(
+                        "Asus ZenFone Max Pro M2 (X01BD)",
+                        new AboutTeamAdapter.Dev(
+                                "Sonal Singh",
+                                "",
+                                "https://avatars3.githubusercontent.com/SonalSingh18",
+                                "https://forum.xda-developers.com/showthread.php?t=3951353",
+                                "https://github.com/SonalSingh18",
                                 ""
                         )
                 )
@@ -142,11 +170,179 @@ public class AboutTeam extends SettingsPreferenceFragment {
 	list.add(new AboutTeamAdapter.Maintainer(
                         "Google Pixel 2 XL (Taimen)",
                         new AboutTeamAdapter.Dev(
-                                "Nitin1438",
+                                "Nitinkumar Chobhe",
                                 "",
-                                "https://avatars3.githubusercontent.com/nitin1438",
-                                "https://forum.xda-developers.com/pixel-2-xl/development/rom-colt-os-enigma-taimen-t3911826",
-                                "https://github.com/nitin1438",
+                                "https://avatars3.githubusercontent.com/Nitin1438",
+                                "https://forum.xda-developers.com/showthread.php?t=3911826",
+                                "https://github.com/Nitin1438",
+                                ""
+                        )
+                )
+        );
+        list.add(new AboutTeamAdapter.Maintainer(
+                        "Lenovo Z6 Pro (Zippo)",
+                        new AboutTeamAdapter.Dev(
+                                "Einar Gednochsson",
+                                "",
+                                "https://avatars3.githubusercontent.com/wilmabumsson",
+                                "https://forum.xda-developers.com/showthread.php?t=4128361",
+                                "https://github.com/wilmabumsson",
+                                ""
+                        )
+                )
+        );
+	list.add(new AboutTeamAdapter.Maintainer(
+                        "Moto G5s Plus (Sanders)",
+                        new AboutTeamAdapter.Dev(
+                                "Ashwatthama",
+                                "",
+                                "https://avatars3.githubusercontent.com/sai4041412",
+                                "https://forum.xda-developers.com/showthread.php?t=4048301",
+                                "https://github.com/sai4041412",
+                                ""
+                        )
+                )
+        );
+	list.add(new AboutTeamAdapter.Maintainer(
+                        "Moto G7 (River)",
+                        new AboutTeamAdapter.Dev(
+                                "SamuelSouzaa",
+                                "",
+                                "https://avatars3.githubusercontent.com/Nyoutaaa",
+                                "https://forum.xda-developers.com/showthread.php?t=4100533",
+                                "https://github.com/Nyoutaaa",
+                                ""
+                        )
+                )
+        );
+	list.add(new AboutTeamAdapter.Maintainer(
+                        "Motorola Nexus 6 (Shamu)",
+                        new AboutTeamAdapter.Dev(
+                                "Nitinkumar Chobhe",
+                                "",
+                                "https://avatars3.githubusercontent.com/Nitin1438",
+                                "https://forum.xda-developers.com/showthread.php?t=3709921",
+                                "https://github.com/Nitin1438",
+                                ""
+                        )
+                )
+        );
+	list.add(new AboutTeamAdapter.Maintainer(
+                        "OnePlus One (Bacon)",
+                        new AboutTeamAdapter.Dev(
+                                "Shab Qadri",
+                                "",
+                                "https://avatars3.githubusercontent.com/ShabQadri",
+                                "https://forum.xda-developers.com/showthread.php?t=4033897",
+                                "https://github.com/ShabQadri",
+                                ""
+                        )
+                )
+        );
+	list.add(new AboutTeamAdapter.Maintainer(
+                        "OnePlus 3/3T",
+                        new AboutTeamAdapter.Dev(
+                                "Rakesh Batra",
+                                "",
+                                "https://avatars3.githubusercontent.com/RakeshBatra",
+                                "https://forum.xda-developers.com/showthread.php?t=3971691",
+                                "https://github.com/RakeshBatra",
+                                ""
+                        )
+                )
+        );
+	list.add(new AboutTeamAdapter.Maintainer(
+                        "OnePlus 5/5T (Cheeseburger/Dumpling)",
+                        new AboutTeamAdapter.Dev(
+                                "Mukesh Singh",
+                                "",
+                                "https://avatars3.githubusercontent.com/mukesh22584",
+                                "https://forum.xda-developers.com/showthread.php?t=3901221",
+                                "https://github.com/mukesh22584",
+                                ""
+                        )
+                )
+        );
+	list.add(new AboutTeamAdapter.Maintainer(
+                        "Samsung Galaxy Tab Pro 8.4 (Mondrianwifi)",
+                        new AboutTeamAdapter.Dev(
+                                "Gigabyte",
+                                "",
+                                "https://avatars3.githubusercontent.com/gigabyte-1000",
+                                "https://forum.xda-developers.com/showthread.php?t=4090429",
+                                "https://github.com/gigabyte-1000",
+                                ""
+                        )
+                )
+        );
+	list.add(new AboutTeamAdapter.Maintainer(
+                        "Xiaomi Mi 6X (Wayne)",
+                        new AboutTeamAdapter.Dev(
+                                "Markdarkness",
+                                "",
+                                "https://avatars3.githubusercontent.com/Markdarkness",
+                                "https://forum.xda-developers.com/showthread.php?t=4091681",
+                                "https://github.com/Markdarkness",
+                                ""
+                        )
+                )
+        );
+	list.add(new AboutTeamAdapter.Maintainer(
+                        "Xiaomi Mi 8 Lite (Platina)",
+                        new AboutTeamAdapter.Dev(
+                                "Curse",
+                                "",
+                                "https://avatars3.githubusercontent.com/anulalat",
+                                "https://forum.xda-developers.com/showthread.php?t=4133657",
+                                "https://github.com/anulalat",
+                                ""
+                        )
+                )
+        );
+	list.add(new AboutTeamAdapter.Maintainer(
+                        "Xiaomi Mi A2 (Jasmine Sprout)",
+                        new AboutTeamAdapter.Dev(
+                                "Siddharth Bharadwaj",
+                                "",
+                                "https://avatars3.githubusercontent.com/SiddharthBharadwaj",
+                                "https://forum.xda-developers.com/showthread.php?t=4005401",
+                                "https://github.com/SiddharthBharadwaj",
+                                ""
+                        )
+                )
+        );
+	list.add(new AboutTeamAdapter.Maintainer(
+                        "Xiaomi Pocophone F1 (Beryllium)",
+                        new AboutTeamAdapter.Dev(
+                                "Mani Madhuri",
+                                "",
+                                "https://avatars3.githubusercontent.com/Joker-commits",
+                                "https://forum.xda-developers.com/showthread.php?t=4081133",
+                                "https://github.com/Joker-commits",
+                                ""
+                        )
+                )
+        );
+	list.add(new AboutTeamAdapter.Maintainer(
+                        "Xiaomi Redmi 7 (Onclite)",
+                        new AboutTeamAdapter.Dev(
+                                "Gagan Malvi",
+                                "",
+                                "https://avatars3.githubusercontent.com/TheAcanthite",
+                                "https://forum.xda-developers.com/redmi-7/development/rom-coltos-t4063441",
+                                "https://github.com/TheAcanthite",
+                                ""
+                        )
+                )
+        );
+	list.add(new AboutTeamAdapter.Maintainer(
+                        "Xiaomi Redmi 5 Plus / Note 5 (Vince)",
+                        new AboutTeamAdapter.Dev(
+                                "Alexandru Scurtu",
+                                "",
+                                "https://avatars3.githubusercontent.com/sashascurtu",
+                                "https://forum.xda-developers.com/showthread.php?t=4133341",
+                                "https://github.com/sashascurtu",
                                 ""
                         )
                 )
@@ -157,56 +353,32 @@ public class AboutTeam extends SettingsPreferenceFragment {
                                 "HSgod",
                                 "",
                                 "https://avatars3.githubusercontent.com/HSgod",
-                                "https://forum.xda-developers.com/k20-pro/development/rom-coltos-6-3-t4142895",
+                                "https://forum.xda-developers.com/showthread.php?t=4142895",
                                 "https://github.com/HSgod",
                                 ""
                         )
                 )
         );
-        list.add(new AboutTeamAdapter.Maintainer(
-                        "Xiaomi Mi A2 (Jasmine_Sprout)",
+	list.add(new AboutTeamAdapter.Maintainer(
+                        "Xiaomi Redmi Note 3 Pro (Kenzo/Kate)",
                         new AboutTeamAdapter.Dev(
-                                "Siddharth Bharadwaj",
+                                "Gigabyte",
                                 "",
-                                "https://avatars3.githubusercontent.com/SiddharthBharadwaj",
-                                "https://forum.xda-developers.com/mi-a2/development/rom-colt-enigma-v5-3-ten-t4005401",
-                                "https://github.com/SiddharthBharadwaj",
+                                "https://avatars3.githubusercontent.com/gigabyte-1000",
+                                "https://forum.xda-developers.com/showthread.php?t=4090359",
+                                "https://github.com/gigabyte-1000",
                                 ""
                         )
                 )
         );
 	list.add(new AboutTeamAdapter.Maintainer(
-                        "OnePlus 5T (Dumpling)",
+                        "Xiaomi Redmi Note 4/X (Mido)",
                         new AboutTeamAdapter.Dev(
-                                "mukesh22584",
+                                "Sagar Rokade",
                                 "",
-                                "https://avatars3.githubusercontent.com/mukesh22584",
-                                "https://forum.xda-developers.com/oneplus-5t/development/rom-colt-enigma-v5-3-t4005957",
-                                "https://github.com/mukesh22584",
-                                ""
-                        )
-                )
-        );
-	list.add(new AboutTeamAdapter.Maintainer(
-                        "Asus Zenfone Max Pro M2 (X01BD)",
-                        new AboutTeamAdapter.Dev(
-                                "Sonal Singh",
-                                "",
-                                "https://avatars3.githubusercontent.com/SonalSingh18",
-                                "https://forum.xda-developers.com/max-pro-m2/development/rom-colt-enigmav4-4-t3951353",
-                                "https://github.com/SonalSingh18",
-                                ""
-                        )
-                )
-        );
-	list.add(new AboutTeamAdapter.Maintainer(
-                        "Xiaomi Pocophone F1 (Beryllium)",
-                        new AboutTeamAdapter.Dev(
-                                "Mani-Madhuri",
-                                "",
-                                "https://avatars3.githubusercontent.com/Joker-commits",
-                                "",
-                                "https://github.com/Joker-commits",
+                                "https://avatars3.githubusercontent.com/sagarrokade006",
+                                "https://forum.xda-developers.com/redmi-note-4/xiaomi-redmi-note-4-snapdragon-roms-kernels-recoveries--other-development/rom-colt-os-4-6-enigma-mido-t3973461",
+                                "https://github.com/sagarrokade006",
                                 ""
                         )
                 )
@@ -214,10 +386,10 @@ public class AboutTeam extends SettingsPreferenceFragment {
 	list.add(new AboutTeamAdapter.Maintainer(
                         "Xiaomi Redmi Note 5 Pro (Whyred)",
                         new AboutTeamAdapter.Dev(
-                                "Ayush Kakkar",
+                                "Ayush kakkar",
                                 "",
                                 "https://avatars3.githubusercontent.com/Ayush12ka",
-                                "",
+                                "https://forum.xda-developers.com/showthread.php?t=",
                                 "https://github.com/Ayush12ka",
                                 ""
                         )
@@ -236,42 +408,6 @@ public class AboutTeam extends SettingsPreferenceFragment {
                 )
         );
 	list.add(new AboutTeamAdapter.Maintainer(
-                        "Xiaomi Redmi 4X (Santoni)",
-                        new AboutTeamAdapter.Dev(
-                                "Aman Dwivedi",
-                                "",
-                                "https://avatars3.githubusercontent.com/amandwivedi0",
-                                "https://forum.xda-developers.com/xiaomi-redmi-4x/development/rom-coltos-5-6-t4049845",
-                                "https://github.com/amandwivedi0",
-                                ""
-                        )
-                )
-        );
-	list.add(new AboutTeamAdapter.Maintainer(
-                        "Xiaomi Redmi Note 4/X (Mido)",
-                        new AboutTeamAdapter.Dev(
-                                "Sagar Rokade",
-                                "",
-                                "https://avatars3.githubusercontent.com/sagarrokade006",
-                                "https://forum.xda-developers.com/redmi-note-4/xiaomi-redmi-note-4-snapdragon-roms-kernels-recoveries--other-development/rom-colt-os-4-6-enigma-mido-t3973461",
-                                "https://github.com/sagarrokade006",
-                                ""
-                        )
-                )
-        );
-	list.add(new AboutTeamAdapter.Maintainer(
-                        "Xiaomi Redmi 7 (Onclite)",
-                        new AboutTeamAdapter.Dev(
-                                "Gagan Malvi",
-                                "",
-                                "https://avatars3.githubusercontent.com/TheCynicalDev",
-                                "https://forum.xda-developers.com/redmi-7/development/rom-coltos-t4063441",
-                                "https://github.com/TheAcanthite",
-                                ""
-                        )
-                )
-        );
-	list.add(new AboutTeamAdapter.Maintainer(
                         "Xiaomi Redmi Note 8/8T (Ginkgo)",
                         new AboutTeamAdapter.Dev(
                                 "Mrinal Ghosh",
@@ -279,18 +415,6 @@ public class AboutTeam extends SettingsPreferenceFragment {
                                 "https://avatars3.githubusercontent.com/mg712702",
                                 "https://forum.xda-developers.com/redmi-note-8/development/rom-coltos-redmi-note-8-8t-t4090029",
                                 "https://github.com/mg712702",
-                                ""
-                        )
-                )
-        );
-	list.add(new AboutTeamAdapter.Maintainer(
-                        "Moto G5s Plus (Sanders)",
-                        new AboutTeamAdapter.Dev(
-                                "Ashwathama",
-                                "",
-                                "https://avatars3.githubusercontent.com/sai4041412",
-                                "https://forum.xda-developers.com/moto-g5s-plus/development/rom-colt-os-5-6-official-stable-t4048301",
-                                "https://github.com/sai4041412",
                                 ""
                         )
                 )
