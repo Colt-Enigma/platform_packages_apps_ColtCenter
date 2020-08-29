@@ -616,17 +616,14 @@
     <string name="notification_screen_title">Screen</string>
     <string name="pulse_ambient_light_title">Edge lighting</string>
     <string name="pulse_ambient_light_summary">Light up the side edges of the screen on notification pulse</string>
-    <string name="pulse_ambient_light_color_title">Edge light color</string>
-    <string name="pulse_ambient_light_auto_color_title">Automatic color</string>
-    <string name="pulse_ambient_light_auto_color_summary">Set edge light color to the primary color of your wallpaper</string>
+    <string name="pulse_ambient_light_color_title">Edge light custom color</string>
+    <string name="pulse_ambient_type_color_title">Edge light color type</string>
     <string name="pulse_ambient_light_duration_title">Lights duration</string>
     <string name="pulse_ambient_light_repeat_count_title">Edge Light Repeat count</string>
     <string name="pulse_ambient_light_repeat_count_summary">Set max repeat count. 0 for infinite</string>
     <string name="pulse_ambient_light_layout_title">Edge Light View</string>
     <string name="pulse_ambient_light_layout_solid">Solid</string>
     <string name="pulse_ambient_light_layout_faded">Faded</string>
-    <string name="pulse_ambient_random_color_title">Random color</string>
-    <string name="pulse_ambient_random_color_summary">Sets random colors to pulse edge light</string>
 
     <!-- Status Bar Header -->
     <string name="statusbar_header_category_title">QS Header</string>
