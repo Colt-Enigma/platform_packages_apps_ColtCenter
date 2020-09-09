@@ -351,5 +351,163 @@
             app:layout_constraintTop_toBottomOf="@+id/ivDevXDA4"
             android:src="@drawable/telegram" />
 
+	<View
+            android:id="@+id/view4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:alpha="0.1"
+            android:background="?android:attr/colorAccent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivDevAvatar4" />
+
+        <ImageView
+            android:id="@+id/ivDevAvatar5"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvDevName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view4"/>
+
+        <TextView
+            android:id="@+id/tvDevName5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="72dp"
+            android:layout_marginEnd="8dp"
+            android:text="Saurabh Charde"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvDevRole5"
+            app:layout_constraintEnd_toStartOf="@+id/ivDevXDA5"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivDevAvatar5"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/tvDevRole5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="72dp"
+            android:layout_marginEnd="8dp"
+            android:text="Core Team"
+            android:textColor="?android:attr/colorAccent"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivDevAvatar5"
+            app:layout_constraintEnd_toStartOf="@+id/ivDevTelegram"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDevName5" />
+
+        <ImageButton
+            android:id="@+id/ivDevXDA5"
+            android:layout_width="48dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="?android:attr/selectableItemBackground"
+            app:layout_constraintBottom_toTopOf="@+id/ivDevTelegram5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivDevAvatar5"
+            app:layout_constraintVertical_chainStyle="spread"
+            android:src="@drawable/xda" />
+
+        <ImageButton
+            android:id="@+id/ivDevTelegram5"
+            android:layout_width="48dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="?android:attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/ivDevAvatar5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivDevXDA5"
+            android:src="@drawable/telegram" />
+
+        <View
+            android:id="@+id/view5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:alpha="0.1"
+            android:background="?android:attr/colorAccent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivDevAvatar5" />
+
+        <ImageView
+            android:id="@+id/ivDevAvatar6"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvDevName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view5"/>
+
+        <TextView
+            android:id="@+id/tvDevName6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="72dp"
+            android:layout_marginEnd="8dp"
+            android:text="Roger T"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvDevRole6"
+            app:layout_constraintEnd_toStartOf="@+id/ivDevXDA6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivDevAvatar6"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/tvDevRole6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="72dp"
+            android:layout_marginEnd="8dp"
+            android:text="Man Behind The Beautification | Core Team"
+            android:textColor="?android:attr/colorAccent"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivDevAvatar6"
+            app:layout_constraintEnd_toStartOf="@+id/ivDevTelegram"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDevName6" />
+
+        <ImageButton
+            android:id="@+id/ivDevXDA6"
+            android:layout_width="48dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="?android:attr/selectableItemBackground"
+            app:layout_constraintBottom_toTopOf="@+id/ivDevTelegram6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivDevAvatar6"
+            app:layout_constraintVertical_chainStyle="spread"
+            android:src="@drawable/xda" />
+
+        <ImageButton
+            android:id="@+id/ivDevTelegram6"
+            android:layout_width="48dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="?android:attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/ivDevAvatar6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivDevXDA6"
+            android:src="@drawable/telegram" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

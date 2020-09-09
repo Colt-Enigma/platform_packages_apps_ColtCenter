@@ -169,6 +169,18 @@ public class AboutTeamAdapter extends RecyclerView.Adapter<AboutTeamAdapter.Hold
         private ImageButton ivDevXDA4;
         private ImageButton ivDevTelegram4;
 
+	private ImageView ivDevAvatar5;
+        private TextView tvDevName5;
+        private TextView tvDevRole5;
+        private ImageButton ivDevXDA5;
+        private ImageButton ivDevTelegram5;
+
+        private ImageView ivDevAvatar6;
+        private TextView tvDevName6;
+        private TextView tvDevRole6;
+        private ImageButton ivDevXDA6;
+        private ImageButton ivDevTelegram6;
+
         private Team team;
 
         public TeamViewHolder(View itemView, final OnClickListener listener) {
@@ -183,18 +195,28 @@ public class AboutTeamAdapter extends RecyclerView.Adapter<AboutTeamAdapter.Hold
             ivDevTelegram3 = itemView.findViewById(R.id.ivDevTelegram3);
             ivDevXDA4 = itemView.findViewById(R.id.ivDevXDA4);
             ivDevTelegram4 = itemView.findViewById(R.id.ivDevTelegram4);
+	    ivDevXDA5 = itemView.findViewById(R.id.ivDevXDA5);
+            ivDevTelegram5 = itemView.findViewById(R.id.ivDevTelegram5);
+            ivDevXDA6 = itemView.findViewById(R.id.ivDevXDA6);
+            ivDevTelegram6 = itemView.findViewById(R.id.ivDevTelegram6);
             ivDevAvatar = itemView.findViewById(R.id.ivDevAvatar);
             ivDevAvatar2 = itemView.findViewById(R.id.ivDevAvatar2);
             ivDevAvatar3 = itemView.findViewById(R.id.ivDevAvatar3);
             ivDevAvatar4 = itemView.findViewById(R.id.ivDevAvatar4);
+	    ivDevAvatar5 = itemView.findViewById(R.id.ivDevAvatar5);
+            ivDevAvatar6 = itemView.findViewById(R.id.ivDevAvatar6);
             tvDevName = itemView.findViewById(R.id.tvDevName);
             tvDevName2 = itemView.findViewById(R.id.tvDevName2);
             tvDevName3 = itemView.findViewById(R.id.tvDevName3);
             tvDevName4 = itemView.findViewById(R.id.tvDevName4);
+	    tvDevName5 = itemView.findViewById(R.id.tvDevName5);
+            tvDevName6 = itemView.findViewById(R.id.tvDevName6);
             tvDevRole = itemView.findViewById(R.id.tvDevRole);
             tvDevRole2 = itemView.findViewById(R.id.tvDevRole2);
             tvDevRole3 = itemView.findViewById(R.id.tvDevRole3);
             tvDevRole4 = itemView.findViewById(R.id.tvDevRole4);
+	    tvDevRole5 = itemView.findViewById(R.id.tvDevRole5);
+            tvDevRole6 = itemView.findViewById(R.id.tvDevRole6);
             teamGithub.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -255,6 +277,30 @@ public class AboutTeamAdapter extends RecyclerView.Adapter<AboutTeamAdapter.Hold
                     listener.OnClick(team.team.get(3).devTelegram);
                 }
             });
+	    ivDevXDA5.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.OnClick(team.team.get(4).devXDA);
+                }
+            });
+            ivDevTelegram5.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.OnClick(team.team.get(4).devTelegram);
+                }
+            });
+            ivDevXDA6.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.OnClick(team.team.get(5).devXDA);
+                }
+            });
+            ivDevTelegram6.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.OnClick(team.team.get(5).devTelegram);
+                }
+            });
         }
 
         @Override
@@ -306,6 +352,28 @@ public class AboutTeamAdapter extends RecyclerView.Adapter<AboutTeamAdapter.Hold
                             RoundedBitmapDrawableFactory.create(itemView.getContext().getResources(), resource);
                     circularBitmapDrawable.setCircular(true);
                     ivDevAvatar4.setImageDrawable(circularBitmapDrawable);
+                }
+            });
+	   tvDevName5.setText(team.team.get(4).devName);
+            tvDevRole5.setText(team.team.get(4).devRole);
+            Glide.with(itemView.getContext()).load(team.team.get(4).devAvatarUrl).asBitmap().centerCrop().into(new BitmapImageViewTarget(ivDevAvatar5){
+                @Override
+                protected void setResource(Bitmap resource) {
+                    RoundedBitmapDrawable circularBitmapDrawable =
+                            RoundedBitmapDrawableFactory.create(itemView.getContext().getResources(), resource);
+                    circularBitmapDrawable.setCircular(true);
+                    ivDevAvatar5.setImageDrawable(circularBitmapDrawable);
+                }
+            });
+            tvDevName6.setText(team.team.get(5).devName);
+            tvDevRole6.setText(team.team.get(5).devRole);
+            Glide.with(itemView.getContext()).load(team.team.get(5).devAvatarUrl).asBitmap().centerCrop().into(new BitmapImageViewTarget(ivDevAvatar6){
+                @Override
+                protected void setResource(Bitmap resource) {
+                    RoundedBitmapDrawable circularBitmapDrawable =
+                            RoundedBitmapDrawableFactory.create(itemView.getContext().getResources(), resource);
+                    circularBitmapDrawable.setCircular(true);
+                    ivDevAvatar6.setImageDrawable(circularBitmapDrawable);
                 }
             });
         }
