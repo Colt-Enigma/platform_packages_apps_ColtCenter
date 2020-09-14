@@ -264,6 +264,18 @@ public class AboutTeam extends SettingsPreferenceFragment {
                 )
         );
 	list.add(new AboutTeamAdapter.Maintainer(
+                        "OnePlus 6T (Fajita)",
+                        new AboutTeamAdapter.Dev(
+                                "Ziauddin Sameer",
+                                "",
+                                "https://avatars3.githubusercontent.com/ziasam",
+                                "https://forum.xda-developers.com/showthread.php?t=4145769",
+                                "https://github.com/ziasam",
+                                ""
+                        )
+                )
+        );        
+	list.add(new AboutTeamAdapter.Maintainer(
                         "Samsung Galaxy Tab Pro 8.4 (Mondrianwifi)",
                         new AboutTeamAdapter.Dev(
                                 "Gigabyte",
