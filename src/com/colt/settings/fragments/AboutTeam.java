@@ -274,7 +274,19 @@ public class AboutTeam extends SettingsPreferenceFragment {
                                 ""
                         )
                 )
-        );        
+        );
+        list.add(new AboutTeamAdapter.Maintainer(
+                        "POCO X2/Redmi K30 (Phoenix)",
+                        new AboutTeamAdapter.Dev(
+                                "Chiranth Chiru",
+                                "",
+                                "https://avatars3.githubusercontent.com/chiru2000",
+                                "https://forum.xda-developers.com/member.php?u=10100968",
+                                "https://github.com/chiru2000",
+                                ""
+                        )
+                )
+        );
 	list.add(new AboutTeamAdapter.Maintainer(
                         "Samsung Galaxy Tab Pro 8.4 (Mondrianwifi)",
                         new AboutTeamAdapter.Dev(
